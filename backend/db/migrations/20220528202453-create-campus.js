@@ -9,31 +9,40 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Users', key: 'id'}
       },
       name: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(100)
       },
       city: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       state: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       description: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       tuition: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       inStateTuition: {
         type: Sequelize.INTEGER
       },
       public: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        default: false
       },
       private: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        default: false
       },
       createdAt: {
         allowNull: false,

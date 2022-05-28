@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {model: 'Users', key: 'id'}
     },
-    startTime: {
+    startDate: {
       allowNull: false,
       type: DataTypes.DATE,
     },
-    endTime: {
+    endDate: {
       allowNull: false,
       type: DataTypes.DATE
     }

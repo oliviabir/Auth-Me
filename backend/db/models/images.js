@@ -7,10 +7,15 @@ module.exports = (sequelize, DataTypes) => {
       references: {model: 'Campuses', key: 'id'}
     },
     url: {
+      allowNull: false,
       type: DataTypes.STRING,
       validate: {
         isUrl: true
       }
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.STRING(50)
     }
   }, {});
   Image.associate = function(models) {
