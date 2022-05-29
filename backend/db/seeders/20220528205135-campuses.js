@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Campuses', [
       {
-        userId: 5,
+        userId: 8,
         name: 'Stanford University',
         city: 'Stanford',
         state: 'California',
@@ -17,7 +17,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'Columbia University',
         city: 'New York',
         state: 'New York',
@@ -30,7 +30,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'Harvard University',
         city: 'Cambridge',
         state: 'Massachusetts',
@@ -43,7 +43,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'Massachusetts Institute of Technology (MIT)',
         city: 'Cambridge',
         state: 'Massachusetts',
@@ -56,7 +56,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'Yale University',
         city: 'New Haven',
         state: 'Connecticut',
@@ -69,7 +69,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'University of Chicago',
         city: 'Chicago',
         state: 'Illinois',
@@ -82,7 +82,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'University of Pennsylvania',
         city: 'Philadelphia',
         state: 'Pennsylvania',
@@ -95,7 +95,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'Duke University',
         city: 'Durham',
         state: 'North Carolina',
@@ -108,7 +108,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'University of Arkansas',
         city: 'Fayetteville',
         state: 'Arkansas',
@@ -121,7 +121,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'University of Michigan',
         city: 'Ann Arbor',
         state: 'Michigan',
@@ -134,7 +134,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'University of Washington',
         city: 'Seattle',
         state: 'Washington',
@@ -147,7 +147,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'Western Washington University',
         city: 'Bellingham',
         state: 'Washington',
@@ -160,7 +160,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'The Evergreen State College',
         city: 'Olympia',
         state: 'Washington',
@@ -173,7 +173,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'Boston College',
         city: 'Newton',
         state: 'Massachusetts',
@@ -186,7 +186,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'University of California, Los Angeles',
         city: 'Los Angeles',
         state: 'California',
@@ -199,7 +199,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'Rice University',
         city: 'Houston',
         state: 'Texas',
@@ -212,7 +212,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'Georgetown University',
         city: 'Washington D.C',
         state: 'Washington D.C',
@@ -225,7 +225,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 7,
         name: 'University of Louisville',
         city: 'Louisville',
         state: 'Kentucky',
@@ -238,7 +238,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'University of South Florida',
         city: 'Tampa',
         state: 'Florida',
@@ -251,7 +251,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 6,
+        userId: 9,
         name: 'University of Georgia',
         city: 'Athens',
         state: 'Georgia',
@@ -264,7 +264,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 8,
         name: 'Texas A&M University',
         city: 'College Station',
         state: 'Texas',
