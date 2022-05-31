@@ -5,9 +5,9 @@ import { useHistory, useParams } from "react-router-dom";
 import './CampusPage.css'
 
 const Campus = () => {
-    const { campusId } = useParams()
-    const campus =  campus.find(campus => campus.id === campusId)
-    console.log(campus)
+    // const { campusId } = useParams()
+    // const campus =  campus.find(campus => campus.id === campusId)
+    // console.log(campus)
   return (
     <div>Campus</div>
   )

@@ -18,7 +18,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const campusId = req.params.campusId
+    const campusId = req.params.id
 
     const campus = await Campus.findByPk(campusId, {
         include: Image
