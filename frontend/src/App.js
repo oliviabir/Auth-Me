@@ -24,7 +24,7 @@ function App() {
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
-          <Route path='/campus/:id'>
+          <Route path='/campus/:campusId'>
             <CampusDetailPage />
           </Route>
         </Switch>

@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf"
+
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
 
@@ -12,7 +14,7 @@ const loadOne = (campus) => ({
 })
 
 export const getCampusList = () => async(dispatch) => {
-    const response = await fetch('/api/campus')
+    const response = await csrfFetch('/api/campus')
 
     if (response.ok) {
         const campuses = await response.json()
@@ -20,8 +22,8 @@ export const getCampusList = () => async(dispatch) => {
     }
 }
 
-export const getCampus = (id) => async(dispatch) => {
-    const response = await fetch(`/api/campus/${id}`)
+export const getCampus = (campusId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/campus/${campusId}`)
 
     if (response.ok) {
         const campus = await response.json()
@@ -34,9 +36,13 @@ const initialState = {}
 const campusReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD:
+            const normalizedCampuses = {}
+            action.campuses.forEach(campus => {
+                normalizedCampuses[campus.id] = campus
+            })
             return {
                 ...state,
-                campuses: action.campuses
+                ...normalizedCampuses
             }
         default:
             return state
