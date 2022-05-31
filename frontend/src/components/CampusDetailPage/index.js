@@ -11,10 +11,12 @@ const CampusDetail = () => {
     const dispatch = useDispatch()
     // const campus =  useSelector(state => state.campus[campusId])
     // console.log(campus, 'this is the campus')
-    const campus = useSelector(state => state.campus.id === campusId)
+    // const campus = useSelector(state => state.campus.id === campusId)
+    const campuses = useSelector(state => {
+      return Object.values(state.campus)
+    })
 
-
-    console.log(campus, 'THIS IS CAMPUS')
+    console.log(campuses, 'THIS IS CAMPUS')
     console.log(campusId, 'THIS IS CAMPUS ID')
 
     useEffect(() => {
