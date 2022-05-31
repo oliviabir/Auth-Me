@@ -1,9 +1,10 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
+
 const { handleValidationErrors } = require('../../utils/validation');
 
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
+const { requireAuth } = require('../../utils/auth');
 const { Campus, Image } = require('../../db/models');
 
 const router = express.Router();
@@ -51,7 +52,7 @@ const campusValidators = [
     handleValidationErrors
 ]
 
-router.post('/new', campusValidators, asyncHandler((req, res) => {
+router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) => {
     const {
         name,
         city,

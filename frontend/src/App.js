@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import SignupFormPage from "./components/SignUpFormPage";
 import Navigation from "./components/Navigation";
+import CampusPage from "./components/CampusPage"
 import * as sessionActions from './store/session'
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         <Switch>
           <Route path='/signup'>
             <SignupFormPage />
+          </Route>
+          <Route path='/campus/:id'>
+            <CampusPage />
           </Route>
         </Switch>
       )}
