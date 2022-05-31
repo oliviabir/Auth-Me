@@ -27,6 +27,7 @@ export const getCampus = (campusId) => async(dispatch) => {
 
     if (response.ok) {
         const campus = await response.json()
+        console.log(campus, 'THUNK --- CAMPUS')
         dispatch(loadOne(campus))
     }
 }
@@ -45,13 +46,9 @@ const campusReducer = (state = initialState, action) => {
                 ...normalizedCampuses
             }
         case LOAD_ONE:
-            const normalizedCampus = {}
-            action.campus.forEach(campus => {
-                normalizedCampus[campus.id] = campus
-            })
             return {
                 ...state,
-                ...normalizedCampus
+                campus: action.campus
             }
         default:
             return state
