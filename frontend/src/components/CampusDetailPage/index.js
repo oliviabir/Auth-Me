@@ -5,8 +5,8 @@ import { useHistory, useParams } from "react-router-dom";
 import CampusImageDetail from '../CampusImageDetail'
 import './CampusPage.css'
 
-const Campus = () => {
-    // const { campusId } = useParams()
+const CampusDetail = () => {
+    const { campusId } = useParams()
     // const campus =  campus.find(campus => campus.id === campusId)
     // console.log(campus)
   return (
@@ -16,4 +16,4 @@ const Campus = () => {
   )
 }
 
-export default Campus
+export default CampusDetail

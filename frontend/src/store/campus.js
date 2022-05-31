@@ -1,9 +1,9 @@
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
 
-const load = (list) => ({
+const load = (campuses) => ({
     type: LOAD,
-    list,
+    campuses,
 })
 
 const loadOne = (campus) => ({
@@ -15,12 +15,12 @@ export const getCampusList = () => async(dispatch) => {
     const response = await fetch('/api/campus')
 
     if (response.ok) {
-        const list = await response.json()
-        dispatch(load(list))
+        const campuses = await response.json()
+        dispatch(load(campuses))
     }
 }
 
-export const getCampus = () => async(dispatch) => {
+export const getCampus = (id) => async(dispatch) => {
     const response = await fetch(`/api/campus/${id}`)
 
     if (response.ok) {
@@ -28,3 +28,19 @@ export const getCampus = () => async(dispatch) => {
         dispatch(loadOne(campus))
     }
 }
+
+const initialState = {}
+
+const campusReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOAD:
+            return {
+                ...state,
+                campuses: action.campuses
+            }
+        default:
+            return state
+    }
+}
+
+export default campusReducer;
