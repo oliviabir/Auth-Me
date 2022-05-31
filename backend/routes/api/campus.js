@@ -17,13 +17,15 @@ router.get('/', asyncHandler(async(req, res) => {
     return res.json(campuses)
 }))
 
-router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const campusId = req.params.id
+router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
+    const campusId = req.params.campusId
 
     const campus = await Campus.findByPk(campusId, {
-        include: Image
+        include: Image,
+        where: {
+            campusId: campusId
+        }
     })
-
     return res.json(campus)
 }))
 
