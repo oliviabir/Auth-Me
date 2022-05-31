@@ -9,7 +9,7 @@ const CampusList = () => {
     const campuses = useSelector(state => {
         return Object.values(state.campus)
       })
-      console.log(campuses, 'THIS IS CAMPUS')
+
       useEffect(() => {
           dispatch(getCampusList())
       }, [dispatch])

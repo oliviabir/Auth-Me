@@ -45,9 +45,13 @@ const campusReducer = (state = initialState, action) => {
                 ...normalizedCampuses
             }
         case LOAD_ONE:
+            const normalizedCampus = {}
+            action.campus.forEach(campus => {
+                normalizedCampus[campus.id] = campus
+            })
             return {
                 ...state,
-                campus: action.campus
+                ...normalizedCampus
             }
         default:
             return state
