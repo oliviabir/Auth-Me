@@ -2,27 +2,28 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { getCampusList } from '../../store/campus';
+import { getCampus } from '../../store/campus';
 import CampusImageDetail from '../CampusImageDetail'
 import './CampusPage.css'
 
 const CampusDetail = () => {
-    // const { campusId } = useParams()
+    const { campusId } = useParams()
+    const dispatch = useDispatch()
     // const campus =  useSelector(state => state.campus[campusId])
     // console.log(campus, 'this is the campus')
-    const campus = useSelector(state => {
-      return Object.values(state.campus)
-    })
+    const campus = useSelector(state => state.campus.id === campusId)
+
+
     console.log(campus, 'THIS IS CAMPUS')
-    const dispatch = useDispatch()
+    console.log(campusId, 'THIS IS CAMPUS ID')
 
     useEffect(() => {
-        dispatch(getCampusList())
+        dispatch(getCampus(campusId))
     }, [dispatch])
 
   return (
     <div>
-        <div>{campus.name}</div>
+        {/* <div>{campus.name}</div> */}
         <CampusImageDetail />
     </div>
   )
