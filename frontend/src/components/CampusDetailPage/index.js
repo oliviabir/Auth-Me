@@ -15,7 +15,7 @@ const CampusDetail = () => {
 
     console.log(campus, 'THIS IS CAMPUS')
     console.log(campusId, 'THIS IS CAMPUS ID')
-    // console.log(campus.name, 'CAMPUS NAME')
+    console.log(campus?.name, 'CAMPUS NAME')
 
     useEffect(() => {
         dispatch(getCampus(campusId))
@@ -25,10 +25,11 @@ const CampusDetail = () => {
     <>
       {
         campus ?
-        <div>
-            {/* <h1>{campus.name}</h1> */}
+        <div className='campus-container'>
+            <h1>{campus.name}</h1>
+            <h3>{campus.city}, {campus.state}</h3>
             <div>
-              <CampusImageDetail />
+              <CampusImageDetail campus={campus}/>
             </div>
         </div>
         : null

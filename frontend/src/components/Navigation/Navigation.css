@@ -1,10 +1,21 @@
 
-/* .navBar {
+.navBar {
     background-color: white;
-    box-shadow: 0 3px 8px #9095A1;
     width: 100%;
     height: 3em;
+    padding: 10px;
     margin: 0;
-    top: 0;
     position: fixed;
-} */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+}
