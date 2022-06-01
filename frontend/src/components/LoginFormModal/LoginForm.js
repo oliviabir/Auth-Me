@@ -33,25 +33,27 @@ const LoginForm = () => {
         {errors.map((error, idx) =>
             <li key={idx}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
+      <label className='inputField'>
         <input
+          className='input'
           type="text"
           value={credential}
+          placeholder='Username or Email'
           onChange={(e) => setCredential(e.target.value)}
           required
         />
       </label>
-      <label>
-        Password
+      <label className='inputField'>
         <input
+          className='input'
           type="password"
           value={password}
+          placeholder='Password'
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <button type="submit" className='button'>Log In</button>
     </form>
   );
 }
