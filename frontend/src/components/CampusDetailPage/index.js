@@ -9,24 +9,31 @@ import './CampusPage.css'
 const CampusDetail = () => {
     const { campusId } = useParams()
     const dispatch = useDispatch()
-    const campus =  useSelector(state => state.campus[campusId])
-    // const campus = useSelector(state => state.campus.id === campusId)
-    // const campuses = useSelector(state => {
-    //   return Object.values(state.campus)
-    // })
+    const campusObj =  useSelector(state => state.campus)
+    const campus = campusObj.campus
+
 
     console.log(campus, 'THIS IS CAMPUS')
     console.log(campusId, 'THIS IS CAMPUS ID')
+    // console.log(campus.name, 'CAMPUS NAME')
 
     useEffect(() => {
         dispatch(getCampus(campusId))
     }, [dispatch])
 
   return (
-    <div>
-        {/* <div>{campus.name}</div> */}
-        <CampusImageDetail />
-    </div>
+    <>
+      {
+        campus ?
+        <div>
+            {/* <h1>{campus.name}</h1> */}
+            <div>
+              <CampusImageDetail />
+            </div>
+        </div>
+        : null
+      }
+    </>
   )
 }
 
