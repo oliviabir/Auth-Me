@@ -32,7 +32,7 @@ const CampusDetail = () => {
               <CampusImageDetail campus={campus}/>
             </div>
         </div>
-        : null
+        :null
       }
     </>
   )

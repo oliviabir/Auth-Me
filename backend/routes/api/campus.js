@@ -54,7 +54,8 @@ const campusValidators = [
     handleValidationErrors
 ]
 
-router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) => {
+router.post('/new', campusValidators, asyncHandler(async (req, res) => {
+    console.log(req.body, 'BACKEND -- REQ BODY')
     const {
         userId,
         name,
@@ -67,7 +68,7 @@ router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) 
         private
     } = req.body
 
-    const campus = await Campus.build({
+    const campus = await Campus.create({
         userId,
         name,
         city,
@@ -79,8 +80,7 @@ router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) 
         private
     })
 
-    const newCampus = await property.save()
-    return res.json(newCampus)
+    return res.json(campus)
 }))
 
 module.exports = router;
