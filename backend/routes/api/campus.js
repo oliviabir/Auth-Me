@@ -29,11 +29,6 @@ router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
     return res.json(campus)
 }))
 
-router.get('/new', asyncHandler(async(req, res) => {
-    const campus = await Campus.create()
-    return res.json(campus)
-}))
-
 const campusValidators = [
     check('name')
         .exists({ checkFalsy: true })
@@ -60,29 +55,9 @@ const campusValidators = [
 ]
 
 router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) => {
-    const {
-        name,
-        city,
-        state,
-        description,
-        tuition,
-        inStateTuition,
-        public,
-        private
-    } = req.body
+    const newCampus = await Campus.create(req.body)
 
-    const campus = Campus.build({
-        name,
-        city,
-        state,
-        description,
-        tuition,
-        inStateTuition,
-        public,
-        private
-    })
-
-    return res.json(campus)
+    return res.json(newCampus)
 }))
 
 module.exports = router;

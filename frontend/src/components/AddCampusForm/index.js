@@ -8,6 +8,9 @@ const AddCampusForm = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const sessionUser = useSelector(state => state.session.user)
+    console.log(sessionUser, 'SESSION USER')
+
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
@@ -25,7 +28,11 @@ const AddCampusForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        const userId = sessionUser.id
+        console.log(userId, 'USER ID ---------')
+
         const payload = {
+            userId,
             name,
             city,
             state,
@@ -41,7 +48,7 @@ const AddCampusForm = () => {
         // try {
         createdCampus = await dispatch(addCampus(payload))
         if (createdCampus) {
-            history.push('/')
+            return history.push('/')
         }
         // } catch (error) {
 
