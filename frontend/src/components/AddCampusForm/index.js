@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getAddCampus } from "../../store/campus";
+import './AddCampusForm.css'
 
 const AddCampusForm = () => {
+    const dispatch = useDispatch()
+
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
@@ -11,6 +15,10 @@ const AddCampusForm = () => {
     const [publicSchool, setPublicSchool] = useState(false)
     const [privateSchool, setPrivateSchool] = useState(false)
     const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+        dispatch(getAddCampus())
+    }, [dispatch])
 
     const handleSubmit = (e) => {
         e.preventDefault()

@@ -2,6 +2,8 @@ import { csrfFetch } from "./csrf"
 
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
+const ADD_ONE = 'campus/ADD_ONE'
+const GET_NEW = 'campus/GET_NEW'
 
 const load = (campuses) => ({
     type: LOAD,
@@ -12,6 +14,18 @@ const loadOne = (campus) => ({
     type: LOAD_ONE,
     campus,
 })
+
+const getNew = (campus) => ({
+    type: GET_NEW,
+    campus
+})
+
+export const addOne = (campus) => {
+    return {
+        type: ADD_ONE,
+        campus,
+    }
+}
 
 export const getCampusList = () => async(dispatch) => {
     const response = await csrfFetch('/api/campus')
@@ -27,8 +41,32 @@ export const getCampus = (campusId) => async(dispatch) => {
 
     if (response.ok) {
         const campus = await response.json()
-        console.log(campus, 'THUNK --- CAMPUS')
         dispatch(loadOne(campus))
+    }
+}
+
+export const getAddCampus = (campus) => async(dispatch) => {
+    const response = await csrfFetch('/api/campus/new')
+
+    if (response.ok) {
+        const campus = await response.json()
+        dispatch(getNew(campus))
+    }
+}
+
+export const addCampus = (campusData) => async(dispatch) => {
+    const response = await csrfFetch('/api/campus/new', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(campusData)
+    })
+
+    if (response.ok) {
+        const campus = await response.json();
+        dispatch(addOne(campus))
+        return campus;
     }
 }
 
@@ -50,6 +88,11 @@ const campusReducer = (state = initialState, action) => {
             return {
                 ...state,
                 campus: action.campus
+            }
+        case ADD_ONE:
+            return {
+                ...state,
+                [action.campus.id]: action.campus
             }
         default:
             return state

@@ -12,9 +12,8 @@ const CampusList = () => {
     return (
       <div className='campus-container'>
             <CampusCard />
-            <a href='/new'>
+            <a href='/campus/new'>
                 Add a Campus
-                <AddCampusForm />
             </a>
       </div>
     )
