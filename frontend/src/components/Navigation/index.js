@@ -25,6 +25,9 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <ul className='navBar'>
+      {/* <a href='/'>
+        <img className='logo' src='../images/logo_transparent.png' alt='hipCampus logo' />
+      </a> */}
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
