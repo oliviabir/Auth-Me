@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAddCampus } from "../../store/campus";
+import { useHistory } from "react-router-dom";
+import { getAddCampus, addCampus } from "../../store/campus";
 import './AddCampusForm.css'
 
 const AddCampusForm = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
+
+    const sessionUser = useSelector(state => state.session.user)
+    console.log(sessionUser, 'SESSION USER')
 
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
@@ -16,13 +21,38 @@ const AddCampusForm = () => {
     const [privateSchool, setPrivateSchool] = useState(false)
     const [errors, setErrors] = useState([])
 
-    useEffect(() => {
-        dispatch(getAddCampus())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getAddCampus())
+    // }, [dispatch])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
+        const userId = sessionUser.id
+        console.log(userId, 'USER ID ---------')
+
+        const payload = {
+            userId,
+            name,
+            city,
+            state,
+            description,
+            tuition,
+            inStateTuition,
+            publicSchool,
+            privateSchool
+        }
+
+        let createdCampus;
+
+        // try {
+        createdCampus = await dispatch(addCampus(payload))
+        if (createdCampus) {
+            return history.push('/')
+        }
+        // } catch (error) {
+
+        // }
         // if (password === confirmPassword) {
         //   setErrors([])
         //   return dispatch(sessionActions.signUp({ email, username, password }))
@@ -32,7 +62,7 @@ const AddCampusForm = () => {
         //     })
         // }
 
-        return setErrors([])
+        // return setErrors([])
     }
 
     return (
@@ -102,6 +132,7 @@ const AddCampusForm = () => {
                 />
             </label>
             <a href='/campus'>Cancel</a>
+            <button type='submit'>Submit</button>
         </form>
     )
 }

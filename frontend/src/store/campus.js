@@ -3,7 +3,6 @@ import { csrfFetch } from "./csrf"
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
 const ADD_ONE = 'campus/ADD_ONE'
-const GET_NEW = 'campus/GET_NEW'
 
 const load = (campuses) => ({
     type: LOAD,
@@ -13,11 +12,6 @@ const load = (campuses) => ({
 const loadOne = (campus) => ({
     type: LOAD_ONE,
     campus,
-})
-
-const getNew = (campus) => ({
-    type: GET_NEW,
-    campus
 })
 
 export const addOne = (campus) => {
@@ -45,15 +39,6 @@ export const getCampus = (campusId) => async(dispatch) => {
     }
 }
 
-export const getAddCampus = (campus) => async(dispatch) => {
-    const response = await csrfFetch('/api/campus/new')
-
-    if (response.ok) {
-        const campus = await response.json()
-        dispatch(getNew(campus))
-    }
-}
-
 export const addCampus = (campusData) => async(dispatch) => {
     const response = await csrfFetch('/api/campus/new', {
         method: 'post',
@@ -62,7 +47,7 @@ export const addCampus = (campusData) => async(dispatch) => {
         },
         body: JSON.stringify(campusData)
     })
-
+    console.log(response, 'RESPONSE FROM POST REQUREST')
     if (response.ok) {
         const campus = await response.json();
         dispatch(addOne(campus))
