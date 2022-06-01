@@ -29,11 +29,11 @@ module.exports = (sequelize, DataTypes) => {
     inStateTuition: {
       type: DataTypes.INTEGER,
     },
-    public: {
+    publicSchool: {
       type: DataTypes.BOOLEAN,
       default: false
     },
-    private: {
+    privateSchool: {
       type: DataTypes.BOOLEAN,
       default: false
     }

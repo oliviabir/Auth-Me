@@ -36,11 +36,11 @@ module.exports = {
       inStateTuition: {
         type: Sequelize.INTEGER
       },
-      public: {
+      publicSchool: {
         type: Sequelize.BOOLEAN,
         default: false
       },
-      private: {
+      privateSchool: {
         type: Sequelize.BOOLEAN,
         default: false
       },
