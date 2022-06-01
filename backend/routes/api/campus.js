@@ -29,6 +29,11 @@ router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
     return res.json(campus)
 }))
 
+router.get('/new', asyncHandler(async(req, res) => {
+    const campus = await Campus.create()
+    return res.json(campus)
+}))
+
 const campusValidators = [
     check('name')
         .exists({ checkFalsy: true })

@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import CampusList from "./components/CampusesList";
 import CampusDetailPage from "./components/CampusDetailPage"
 import * as sessionActions from './store/session'
+import AddCampusForm from "./components/AddCampusForm";
 
 function App() {
   const dispatch = useDispatch()
@@ -28,8 +29,11 @@ function App() {
           <Route path='/campus' exact>
             <CampusList />
           </Route>
-          <Route path='/campus/:campusId'>
+          <Route path='/campus/:campusId(\\d+)'>
             <CampusDetailPage />
+          </Route>
+          <Route path='/campus/new' exact>
+            <AddCampusForm />
           </Route>
         </Switch>
       )}

@@ -9,16 +9,16 @@ const CampusCard = () => {
     const dispatch = useDispatch()
     const campuses = useSelector(state => {
         return Object.values(state.campus)
-      })
+    })
 
-      useEffect(() => {
-          dispatch(getCampusList())
-      }, [dispatch])
+    useEffect(() => {
+        dispatch(getCampusList())
+    }, [dispatch])
 
     return campuses.map((campus) => (
       <div key={campus.name}>
           <div>
-              {campus.name}
+              <a href={`/campus/${campus.id}`}>{campus.name}</a>
               <br></br>
               {campus.city}
               {campus.state}
