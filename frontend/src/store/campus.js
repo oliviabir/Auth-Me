@@ -41,9 +41,10 @@ export const getCampus = (campusId) => async(dispatch) => {
 
 export const addCampus = (campusData) => async(dispatch) => {
     const response = await csrfFetch('/api/campus/new', {
-        method: 'post',
+        method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(campusData)
     })

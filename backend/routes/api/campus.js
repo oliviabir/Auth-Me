@@ -56,11 +56,27 @@ const campusValidators = [
 
 router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) => {
     const {
-
+        userId,
+        name,
+        city,
+        state,
+        description,
+        tuition,
+        inStatetuition,
+        public,
+        private
     } = req.body
 
     const campus = await Campus.build({
-
+        userId,
+        name,
+        city,
+        state,
+        description,
+        tuition,
+        inStatetuition,
+        public,
+        private
     })
 
     const newCampus = await property.save()

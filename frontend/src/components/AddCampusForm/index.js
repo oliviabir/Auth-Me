@@ -9,7 +9,6 @@ const AddCampusForm = () => {
     const history = useHistory()
 
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser, 'SESSION USER')
 
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
@@ -20,10 +19,6 @@ const AddCampusForm = () => {
     const [publicSchool, setPublicSchool] = useState(false)
     const [privateSchool, setPrivateSchool] = useState(false)
     const [errors, setErrors] = useState([])
-
-    // useEffect(() => {
-    //     dispatch(getAddCampus())
-    // }, [dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -43,26 +38,12 @@ const AddCampusForm = () => {
             privateSchool
         }
 
-        let createdCampus;
+        console.log(payload, 'PAYLOADDDD')
 
-        // try {
-        createdCampus = await dispatch(addCampus(payload))
+        let createdCampus = await dispatch(addCampus(payload))
         if (createdCampus) {
             return history.push('/')
         }
-        // } catch (error) {
-
-        // }
-        // if (password === confirmPassword) {
-        //   setErrors([])
-        //   return dispatch(sessionActions.signUp({ email, username, password }))
-        //     .catch(async (res) => {
-        //       const data = await res.json()
-        //       if (data && data.errors) setErrors(data.errors)
-        //     })
-        // }
-
-        // return setErrors([])
     }
 
     return (
