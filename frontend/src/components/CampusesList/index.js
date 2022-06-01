@@ -10,7 +10,8 @@ const CampusList = () => {
 
     return (
       <div className='campus-container'>
-          <CampusCard />
+            <CampusCard />
+            <a href='/new'>Add a Campus</a>
       </div>
     )
 }
