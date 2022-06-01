@@ -55,8 +55,15 @@ const campusValidators = [
 ]
 
 router.post('/new', requireAuth, campusValidators, asyncHandler(async(req, res) => {
-    const newCampus = await Campus.create(req.body)
+    const {
 
+    } = req.body
+
+    const campus = await Campus.build({
+
+    })
+
+    const newCampus = await property.save()
     return res.json(newCampus)
 }))
 
