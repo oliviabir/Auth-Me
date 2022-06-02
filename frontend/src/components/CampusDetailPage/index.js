@@ -27,10 +27,14 @@ const CampusDetail = () => {
         campus ?
         <div className='campus-container'>
             <h1>{campus.name}</h1>
-            <h3>{campus.city}, {campus.state}</h3>
+            <h4>{campus.city}, {campus.state}</h4>
+            <h3>Tuition: ${campus.tuition}</h3>
+            {/* add in state tuition and private or public --- if statements? */}
             <div>
-              <CampusImageDetail campus={campus}/>
+              <CampusImageDetail campusId={campusId}/>
             </div>
+            <h2>Description</h2>
+            <div>{campus.description}</div>
         </div>
         :null
       }

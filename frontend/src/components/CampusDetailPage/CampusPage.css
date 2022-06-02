@@ -1,4 +1,6 @@
 .campus-container {
     margin-top: 10%;
     padding-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
 }
