@@ -78,12 +78,12 @@ export const addCampus = (campusData) => async(dispatch) => {
             }
         }
 
-        const campus = await response.json();
+        const campus = await response.json()
         dispatch(addOne(campus))
-        return campus;
+        return campus
 
     } catch (error) {
-        throw error;
+        throw error
     }
 
 }

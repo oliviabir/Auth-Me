@@ -112,7 +112,7 @@ router.delete('/:campusId', asyncHandler(async (req, res) => {
         await campus.destroy()
         return res.json(campus.id)
     } else {
-        throw new Error('Campus not found.')
+        throw new Error('Campus not found')
     }
 }))
 
