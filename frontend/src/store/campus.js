@@ -48,7 +48,7 @@ export const addCampus = (campusData) => async(dispatch) => {
             body: JSON.stringify(campusData)
         })
         console.log(response, 'RESPONSE FROM THUNKKKKK')
-        if (response.ok) {
+        if (!response.ok) {
             let error;
             if (response.status === 422) {
                 error = await response.json()
@@ -96,7 +96,7 @@ const campusReducer = (state = initialState, action) => {
         case ADD_ONE:
             return {
                 ...state,
-                [action.campus.id]: action.campus
+                [action.newCampus.id]: action.campus
             }
         default:
             return state

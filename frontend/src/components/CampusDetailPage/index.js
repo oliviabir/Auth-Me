@@ -12,11 +12,6 @@ const CampusDetail = () => {
     const campusObj =  useSelector(state => state.campus)
     const campus = campusObj.campus
 
-
-    console.log(campus, 'THIS IS CAMPUS')
-    console.log(campusId, 'THIS IS CAMPUS ID')
-    console.log(campus?.name, 'CAMPUS NAME')
-
     useEffect(() => {
         dispatch(getCampus(campusId))
     }, [dispatch])
@@ -35,6 +30,7 @@ const CampusDetail = () => {
             </div>
             <h2>Description</h2>
             <div>{campus.description}</div>
+            <a href='/bookings'>Book a Tour</a>
         </div>
         :null
       }
