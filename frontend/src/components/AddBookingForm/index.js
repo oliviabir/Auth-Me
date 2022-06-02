@@ -12,9 +12,14 @@ const AddBookingForm = ({ campus }) => {
 
     const sessionUser = useSelector(state => state.session.user)
 
-    const [startDate, setStartDate] = useState(new Date())
-    const [endDate, setEndDate] = useState(new Date())
+    const [tourDate, setTourDate] = useState(new Date())
     const [errors, setErrors] = useState({})
+
+    const changeDate = (e) => {
+        setTourDate(e)
+    }
+
+    console.log(tourDate, '<<<<TOUR DATE')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -25,8 +30,7 @@ const AddBookingForm = ({ campus }) => {
         const payload = {
             userId,
             campusId,
-            startDate,
-            endDate
+            tourDate,
         }
 
         let createdBooking
@@ -42,10 +46,15 @@ const AddBookingForm = ({ campus }) => {
             return history.push('/bookings')
         }
     }
+
   return (
     <form onSubmit={handleSubmit}>
         <h2>{campus.name}</h2>
-        <Calendar />
+        <Calendar
+            value={tourDate}
+            onChange={changeDate}
+        />
+        <button type='submit'>Submit</button>
     </form>
   )
 }

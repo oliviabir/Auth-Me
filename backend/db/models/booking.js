@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     tourDate: {
       allowNull: false,
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
     }
   }, {});
   Booking.associate = function(models) {
