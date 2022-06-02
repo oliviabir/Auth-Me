@@ -29,6 +29,7 @@ router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
             }
         }]
     })
+
     return res.json(campus)
 }))
 
@@ -105,6 +106,7 @@ router.delete('/:campusId', asyncHandler(async (req, res) => {
     // console.log('DELETE ROUTER HIT')
 
     const campus = await Campus.findByPk(campusId)
+    console.log(campus, '************BACKEND DELETE CAMPUS -- CAMPUS*******')
 
     if (campus) {
         await campus.destroy()
