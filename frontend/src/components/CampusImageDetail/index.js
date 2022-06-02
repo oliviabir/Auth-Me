@@ -1,8 +1,8 @@
+import React from 'react'
 import './CampusImageDetail.css'
 
-import React from 'react'
 
-const CampusImageDetail = (campus) => {
+const CampusImageDetail = (campusId) => {
   // const image = campus.Image
   // console.log(image, 'IMAGE CAMPUS DIV')
   return (

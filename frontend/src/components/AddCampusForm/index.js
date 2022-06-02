@@ -120,13 +120,13 @@ const AddCampusForm = () => {
                     // value={publicSchool}
                     >
                     <option
-                        value='true'
+                        value={publicSchool}
                         onChange={(e) => setPublicSchool(e.target.value)}
                     >
                         true
                     </option>
                     <option
-                        value='false'
+                        value={publicSchool}
                         onChange={(e) => setPublicSchool(e.target.value)}
                     >
                         false

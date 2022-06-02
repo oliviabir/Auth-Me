@@ -4,7 +4,6 @@ const { check } = require('express-validator');
 
 const { handleValidationErrors } = require('../../utils/validation');
 
-const { requireAuth } = require('../../utils/auth');
 const { Campus, Image } = require('../../db/models');
 
 const router = express.Router();
@@ -21,10 +20,12 @@ router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
     const campusId = req.params.campusId
 
     const campus = await Campus.findByPk(campusId, {
-        include: Image,
-        where: {
-            campusId: campusId
-        }
+        include: [{
+            model: Image,
+            where: {
+                campusId: campusId
+            }
+        }]
     })
     return res.json(campus)
 }))
@@ -48,7 +49,7 @@ const campusValidators = [
     check('description')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Description'),
-    check('tuiton')
+    check('tuition')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Tuition'),
     handleValidationErrors
