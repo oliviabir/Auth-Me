@@ -39,9 +39,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Campus.associate = function(models) {
-    Campus.hasMany(models.Review, {foreignKey: 'campusId'})
-    Campus.hasMany(models.Image, {foreignKey: 'campusId'})
-    Campus.hasMany(models.Booking, {foreignKey: 'campusId'})
+    Campus.hasMany(models.Review, {foreignKey: 'campusId', onDelete: 'CASCADE', hooks: true})
+    Campus.hasMany(models.Image, {foreignKey: 'campusId', onDelete: 'CASCADE', hooks: true})
+    Campus.hasMany(models.Booking, {foreignKey: 'campusId', onDelete: 'CASCADE', hooks: true})
     Campus.belongsToMany(models.User, {
       through: 'Favorite',
       foreignKey: 'campusId',

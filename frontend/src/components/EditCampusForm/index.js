@@ -1,29 +1,26 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
-import { addCampus } from "../../store/campus";
-import { ValidationError } from "../../utils/validationError";
-import './AddCampusForm.css'
+import { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { ValidationError } from '../../utils/validationError'
+import { editCampus } from '../../store/campus'
 
-const AddCampusForm = () => {
+const EditCampusForm = ({ campus }) => {
     const dispatch = useDispatch()
     const history = useHistory()
 
     const sessionUser = useSelector(state => state.session.user)
 
-
-    const [name, setName] = useState('')
-    const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [description, setDescription] = useState('')
-    const [tuition, setTuition] = useState(0)
-    const [inStateTuition, setInStateTuition] = useState(0)
-    const [publicSchool, setPublicSchool] = useState(false)
-    const [privateSchool, setPrivateSchool] = useState(false)
+    const [name, setName] = useState(campus.name)
+    const [city, setCity] = useState(campus.city)
+    const [state, setState] = useState(campus.state)
+    const [description, setDescription] = useState(campus.description)
+    const [tuition, setTuition] = useState(campus.tuition)
+    const [inStateTuition, setInStateTuition] = useState(campus.inStateTuition || 0)
+    const [publicSchool, setPublicSchool] = useState(campus.publicSchool || true)
+    const [privateSchool, setPrivateSchool] = useState(campus.privateSchool || false)
     const [errors, setErrors] = useState({})
 
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
 
         const userId = sessionUser.id
@@ -40,18 +37,16 @@ const AddCampusForm = () => {
             privateSchool
         }
 
-        console.log(payload, 'PAYLOAD')
-        let createdCampus
-        // let createdCampus = await dispatch(addCampus(payload))
+        let editedCampus;
+
         try {
-            createdCampus = await dispatch(addCampus(payload))
-            console.log(createdCampus, 'CREATED CAMPUSSS')
+            editedCampus = await dispatch(editCampus(payload, campus.id))
         } catch (error) {
             if (error instanceof ValidationError) setErrors(errors.error)
             else setErrors({ overall: error.toString().slice(7) })
         }
 
-        if (createdCampus) {
+        if (editedCampus) {
             setErrors({})
             return history.push('/campus')
         }
@@ -153,4 +148,4 @@ const AddCampusForm = () => {
     )
 }
 
-export default AddCampusForm
+export default EditCampusForm
