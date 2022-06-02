@@ -29,11 +29,11 @@ function App() {
           <Route path='/campus' exact>
             <CampusList />
           </Route>
-          <Route path='/campus/:campusId(\\d+)'>
-            <CampusDetailPage />
-          </Route>
           <Route path='/campus/new' exact>
             <AddCampusForm />
+          </Route>
+          <Route path='/campus/:campusId'>
+            <CampusDetailPage />
           </Route>
         </Switch>
       )}

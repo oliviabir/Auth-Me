@@ -38,20 +38,6 @@ export const getCampus = (campusId) => async(dispatch) => {
     }
 }
 
-
-// export const addCampus = (campusData) => async(dispatch) => {
-//     const response = await csrfFetch('/api/campus/new', {
-//         method: 'POST',
-//         body: JSON.stringify(campusData)
-//     })
-
-//     if (response.ok) {
-//         const campus = await response.json()
-//         dispatch(addOne(campus))
-//         return campus;
-//     }
-// }
-
 export const addCampus = (campusData) => async(dispatch) => {
     try {
         const response = await csrfFetch('/api/campus/new', {
