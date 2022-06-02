@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { getCampusList } from '../../store/campus';
 import './CampusContainer.css'
 
@@ -18,7 +18,7 @@ const CampusCard = () => {
     return campuses.map((campus) => (
       <div key={campus.id}>
           <div>
-              <a href={`/campus/${campus.id}`} id='campus-name'>{campus.name}</a>
+              <Link to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</Link>
               <br></br>
               {campus.city}
               {campus.state}

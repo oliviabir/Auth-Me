@@ -34,7 +34,7 @@ const deleteOne = (campusToDelete) => ({
 
 export const getCampusList = () => async(dispatch) => {
     const response = await csrfFetch('/api/campus')
-
+    console.log(response, 'GET CAMPUS LIST --- RESPONSE FROM THUNKKKKK')
     if (response.ok) {
         const campuses = await response.json()
         dispatch(load(campuses))
@@ -43,7 +43,7 @@ export const getCampusList = () => async(dispatch) => {
 
 export const getCampus = (campusId) => async(dispatch) => {
     const response = await csrfFetch(`/api/campus/${campusId}`)
-
+    console.log(response, 'GET CAMPUS --- RESPONSE FROM THUNKKKKK')
     if (response.ok) {
         const campus = await response.json()
         dispatch(loadOne(campus))
@@ -59,7 +59,7 @@ export const addCampus = (campusData) => async(dispatch) => {
             },
             body: JSON.stringify(campusData)
         })
-        console.log(response, 'RESPONSE FROM THUNKKKKK')
+        console.log(response, 'ADD CAMPUS --- RESPONSE FROM THUNKKKKK')
         if (!response.ok) {
             let error;
             if (response.status === 422) {
@@ -95,7 +95,7 @@ export const editCampus = (data, campusId) => async(dispatch) => {
         },
         body: JSON.stringify(data)
     })
-
+    console.log(response, 'ADD CAMPUS --- RESPONSE FROM THUNKKKKK')
     if (response.ok) {
         const editedCampus = await response.json()
         dispatch(editOne(editedCampus))
@@ -104,12 +104,12 @@ export const editCampus = (data, campusId) => async(dispatch) => {
 }
 
 export const deleteCampus = (campusId) => async(dispatch) => {
-    // console.log('DELETE THUNKKK HIT')
-    // console.log(campusId, 'CAMPUS ID -- DELETE THUNK')
+    console.log('DELETE THUNKKK HIT')
+    console.log(campusId, 'CAMPUS ID -- DELETE THUNK')
     const response = await csrfFetch(`/api/campus/${campusId}`, {
         method: 'DELETE'
     })
-    // console.log(response, 'THIS IS THE DELETE RESPONSE')
+    console.log(response, 'THIS IS THE DELETE RESPONSE')
     if (response.ok) {
         const deletedCampus = await response.json()
         dispatch(deleteOne(deletedCampus))

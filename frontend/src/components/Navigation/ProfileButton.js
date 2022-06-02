@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import './Navigation.css'
 
@@ -31,7 +32,7 @@ const ProfileButton = ({ user }) => {
 
   return (
     <>
-      <a href='/campus' className='nav-links'>Campuses</a>
+      <NavLink to='/campus' className='nav-links'>Campuses</NavLink>
       <button onClick={openMenu} id='profile-icon'>
         <i className="fa-solid fa-building-columns"></i>
       </button>

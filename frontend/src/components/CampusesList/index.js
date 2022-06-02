@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { getCampusList } from '../../store/campus';
 import CampusCard from './CampusCard';
 import './CampusContainer.css'
@@ -19,9 +19,9 @@ const CampusList = () => {
     return (
       <div className='campus-container'>
             <CampusCard />
-            <a href='/campus/new' id='add-campus-btn'>
+            <Link to='/campus/new' id='add-campus-btn'>
                 Add a Campus
-            </a>
+            </Link>
       </div>
     )
 }

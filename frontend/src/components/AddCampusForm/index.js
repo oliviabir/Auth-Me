@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { addCampus } from "../../store/campus";
 import { ValidationError } from "../../utils/validationError";
 import './AddCampusForm.css'
@@ -147,7 +147,7 @@ const AddCampusForm = () => {
                     </option>
                 </select>
             </label>
-            <a href='/campus'>Cancel</a>
+            <Link to='/campus'>Cancel</Link>
             <button type='submit'>Submit</button>
         </form>
     )
