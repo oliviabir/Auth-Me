@@ -15,9 +15,9 @@ const EditCampusForm = ({ campus }) => {
     const [state, setState] = useState(campus.state)
     const [description, setDescription] = useState(campus.description)
     const [tuition, setTuition] = useState(campus.tuition)
-    const [inStateTuition, setInStateTuition] = useState(campus.inStateTuition)
-    const [publicSchool, setPublicSchool] = useState(campus.publicSchool)
-    const [privateSchool, setPrivateSchool] = useState(campus.privateSchool)
+    const [inStateTuition, setInStateTuition] = useState(campus.inStateTuition || 0)
+    const [publicSchool, setPublicSchool] = useState(campus.publicSchool || true)
+    const [privateSchool, setPrivateSchool] = useState(campus.privateSchool || false)
     const [errors, setErrors] = useState({})
 
     const handleSubmit = async(e) => {

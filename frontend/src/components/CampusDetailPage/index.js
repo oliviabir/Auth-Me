@@ -12,6 +12,7 @@ const CampusDetail = () => {
     const campusObj =  useSelector(state => state.campus)
     const campus = campusObj.campus
 
+    console.log(campusObj[campusId], 'CAMPUSOBJ.CAMPUSID')
     console.log(campusObj, 'THIS IS CAMPUS OBJ')
     console.log(campusId, 'THIS IS CAMPUS ID')
     console.log(campus, 'THIS IS CAMPUS')

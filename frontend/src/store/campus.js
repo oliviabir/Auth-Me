@@ -46,6 +46,7 @@ export const getCampus = (campusId) => async(dispatch) => {
     console.log(response, 'GET CAMPUS --- RESPONSE FROM THUNKKKKK')
     if (response.ok) {
         const campus = await response.json()
+        console.log(campus, '--- campus from thunk')
         dispatch(loadOne(campus))
     }
 }
@@ -87,8 +88,8 @@ export const addCampus = (campusData) => async(dispatch) => {
 
 }
 
-export const editCampus = (data, campusId) => async(dispatch) => {
-    const response = await csrfFetch(`/api/campus/${campusId}`, {
+export const editCampus = (data, id) => async(dispatch) => {
+    const response = await csrfFetch(`/api/campus/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

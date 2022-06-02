@@ -32,6 +32,7 @@ const ProfileButton = ({ user }) => {
 
   return (
     <>
+      <NavLink to='/campus/new' className='nav-links'>Add a Campus</NavLink>
       <NavLink to='/campus' className='nav-links'>Campuses</NavLink>
       <button onClick={openMenu} id='profile-icon'>
         <i className="fa-solid fa-building-columns"></i>
