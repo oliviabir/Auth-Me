@@ -7,24 +7,29 @@ import './CampusContainer.css'
 
 const CampusCard = () => {
     const dispatch = useDispatch()
-    const campuses = useSelector(state => {
-        return Object.values(state.campus)
-    })
+    const campusesObj = useSelector(state => state.campus)
+    const campuses = Object.values(campusesObj)
 
     useEffect(() => {
         dispatch(getCampusList())
     }, [dispatch])
 
     return campuses.map((campus) => (
-      <div key={campus.id}>
-          <div>
-              <Link to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</Link>
-              <br></br>
-              {campus.city}
-              {campus.state}
-          </div>
-          <br></br>
-      </div>
+        <>
+            {
+                campuses ?
+                <div key={campus.id}>
+                    <div>
+                        <Link to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</Link>
+                        <br></br>
+                        {campus.city}
+                        {campus.state}
+                    </div>
+                    <br></br>
+                </div>
+                : null
+            }
+        </>
     ))
 }
 
