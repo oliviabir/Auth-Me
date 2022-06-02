@@ -64,17 +64,17 @@ export const createBooking = (bookingData) => async(dispatch) => {
     }
 }
 
-export const deleteBooking = (bookingId) = async(dispatch) => {
-    const response = await csrfFetch(`/api/bookings/${bookingId}`, {
-        method: 'DELETE'
-    })
+// export const deleteBooking = (bookingId) = async(dispatch) => {
+//     const response = await csrfFetch(`/api/bookings/${bookingId}`, {
+//         method: 'DELETE'
+//     })
 
-    if (response.ok) {
-        const bookingToDelete = await response.json()
-        dispatch(remove(bookingToDelete))
-        return bookingToDelete
-    }
-}
+//     if (response.ok) {
+//         const bookingToDelete = await response.json()
+//         dispatch(remove(bookingToDelete))
+//         return bookingToDelete
+//     }
+// }
 
 const initialState = {}
 

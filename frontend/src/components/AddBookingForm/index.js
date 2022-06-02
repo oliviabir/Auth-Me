@@ -2,10 +2,51 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
+import { createBooking } from '../../store/booking'
+import Calendar from 'react-calendar'
 
-const AddBookingForm = () => {
+const AddBookingForm = ({ campus }) => {
+    const dispatch = useDispatch()
+    const history = useHistory()
+    console.log('add booking form hit')
+
+    const sessionUser = useSelector(state => state.session.user)
+
+    const [startDate, setStartDate] = useState(new Date())
+    const [endDate, setEndDate] = useState(new Date())
+    const [errors, setErrors] = useState({})
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const userId = sessionUser.id
+        const campusId = campus.id
+
+        const payload = {
+            userId,
+            campusId,
+            startDate,
+            endDate
+        }
+
+        let createdBooking
+        try {
+            createdBooking = await dispatch(createBooking(payload))
+        } catch (error) {
+            if (error instanceof ValidationError) setErrors(errors.error)
+            else setErrors({ overall: error.toString().slice(7)})
+        }
+
+        if (createdBooking) {
+            setErrors({})
+            return history.push('/bookings')
+        }
+    }
   return (
-    <div>AddBookingForm</div>
+    <form onSubmit={handleSubmit}>
+        <h2>{campus.name}</h2>
+        <Calendar />
+    </form>
   )
 }
 
