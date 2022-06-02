@@ -5,7 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getCampusList } from '../../store/campus';
 import AddCampusForm from '../AddCampusForm';
 import CampusCard from './CampusCard';
-// import '/campusContainer.css'
+import './CampusContainer.css'
 
 const CampusList = () => {
 

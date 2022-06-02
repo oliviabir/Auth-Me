@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getAddCampus, addCampus } from "../../store/campus";
+import { addCampus } from "../../store/campus";
+import { ValidationError } from "../../utils/validationError";
 import './AddCampusForm.css'
 
 const AddCampusForm = () => {
@@ -9,6 +10,7 @@ const AddCampusForm = () => {
     const history = useHistory()
 
     const sessionUser = useSelector(state => state.session.user)
+
 
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
@@ -18,13 +20,13 @@ const AddCampusForm = () => {
     const [inStateTuition, setInStateTuition] = useState(0)
     const [publicSchool, setPublicSchool] = useState(false)
     const [privateSchool, setPrivateSchool] = useState(false)
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState({})
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         const userId = sessionUser.id
-        console.log(userId, 'USER ID ---------')
 
         const payload = {
             userId,
@@ -38,19 +40,33 @@ const AddCampusForm = () => {
             privateSchool
         }
 
-        console.log(payload, 'PAYLOADDDD')
+        console.log(payload, 'PAYLOAD')
+        let createdCampus
+        // let createdCampus = await dispatch(addCampus(payload))
+        try {
+            createdCampus = await dispatch(addCampus(payload))
+            console.log(createdCampus, 'CREATED CAMPUSSS')
+        } catch (error) {
+            if (error instanceof ValidationError) setErrors(errors.error)
+            else setErrors({ overall: error.toString().slice(7) })
+        }
 
-        let createdCampus = await dispatch(addCampus(payload))
         if (createdCampus) {
-            return history.push('/')
+            setErrors({})
+            return history.push('/campus')
         }
     }
 
+    // const handleCancelClick = (e) => {
+    //     e.preventDefault()
+
+    // }
+
     return (
         <form onSubmit={handleSubmit} className='form'>
-            <ul>
+            {/* <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
+            </ul> */}
             <label>School Name
                 <input
                     type='text'
@@ -77,7 +93,7 @@ const AddCampusForm = () => {
             </label>
             <label>Description
                 <input
-                    type='text'
+                    type='textarea'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     required
@@ -85,7 +101,7 @@ const AddCampusForm = () => {
             </label>
             <label>Tuition
                 <input
-                    type='integer'
+                    type='number'
                     value={tuition}
                     onChange={(e) => setTuition(e.target.value)}
                     required
@@ -93,24 +109,48 @@ const AddCampusForm = () => {
             </label>
             <label>In State Tuition
                 <input
-                    type='integer'
+                    type='number'
                     value={inStateTuition}
                     onChange={(e) => setInStateTuition(e.target.value)}
                 />
             </label>
             <label>Public
-                <input
+                <select
                     type='boolean'
-                    value={publicSchool}
-                    onChange={(e) => setPublicSchool(e.target.value)}
-                />
+                    // value={publicSchool}
+                    >
+                    <option
+                        value='true'
+                        onChange={(e) => setPublicSchool(e.target.value)}
+                    >
+                        true
+                    </option>
+                    <option
+                        value='false'
+                        onChange={(e) => setPublicSchool(e.target.value)}
+                    >
+                        false
+                    </option>
+                </select>
             </label>
             <label>Private
-                <input
+                <select
                     type='boolean'
-                    value={privateSchool}
-                    onChange={(e) => setPrivateSchool(e.target.value)}
-                />
+                    // value={privateSchool}
+                    >
+                    <option
+                        value='true'
+                        onChange={(e) => setPrivateSchool(e.target.value)}
+                    >
+                        true
+                    </option>
+                    <option
+                        value='false'
+                        onChange={(e) => setPrivateSchool(e.target.value)}
+                    >
+                        false
+                    </option>
+                </select>
             </label>
             <a href='/campus'>Cancel</a>
             <button type='submit'>Submit</button>
