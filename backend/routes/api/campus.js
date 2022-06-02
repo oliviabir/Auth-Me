@@ -84,4 +84,17 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
     return res.json(campus)
 }))
 
+router.delete('/:campusId', asyncHandler(async (req, res) => {
+    const id = req.params.campusId
+
+    const campus = await Campus.findByPk(id)
+
+    if (campus) {
+        await campus.destroy()
+        return res.json(campus.id)
+    } else {
+        throw new Error('Campus not found.')
+    }
+}))
+
 module.exports = router;

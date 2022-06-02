@@ -57,11 +57,6 @@ const AddCampusForm = () => {
         }
     }
 
-    // const handleCancelClick = (e) => {
-    //     e.preventDefault()
-
-    // }
-
     return (
         <form onSubmit={handleSubmit} className='form'>
             {/* <ul>
@@ -139,13 +134,13 @@ const AddCampusForm = () => {
                     // value={privateSchool}
                     >
                     <option
-                        value='true'
+                        value={privateSchool}
                         onChange={(e) => setPrivateSchool(e.target.value)}
                     >
                         true
                     </option>
                     <option
-                        value='false'
+                        value={privateSchool}
                         onChange={(e) => setPrivateSchool(e.target.value)}
                     >
                         false

@@ -1,3 +1,10 @@
+.campus-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
 #campus-name {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -10,5 +17,17 @@
     border-bottom: 2px solid rgb(65, 220, 201);
     font-weight: 550;
     color: rgb(63, 62, 62);
+    transition: all 0s ease-in-out .25s;
+}
+
+#add-campus-btn {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+#add-campus-btn:hover {
+    font-weight: 500;
+    color: rgb(65, 220, 201);
     transition: all 0s ease-in-out .25s;
 }
