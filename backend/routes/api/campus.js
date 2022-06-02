@@ -9,6 +9,7 @@ const { Campus, Image } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async(req, res) => {
+    console.log('CAMPUS GET ALL ROUTE HIT')
     const campuses = await Campus.findAll({
         include: Image
     })
@@ -17,6 +18,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
+    console.log('CAMPUS GET ONE ROUTE HIT')
     const campusId = req.params.campusId
 
     const campus = await Campus.findByPk(campusId, {
@@ -56,6 +58,7 @@ const campusValidators = [
 ]
 
 router.post('/new', campusValidators, asyncHandler(async (req, res) => {
+    console.log('CAMPUS POST ROUTE HIT')
     console.log(req.body, 'BACKEND -- REQ BODY')
     const {
         userId,
@@ -84,11 +87,24 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
     return res.json(campus)
 }))
 
+router.put('/:campusId', campusValidators, asyncHandler(async (req, res) => {
+    console.log('CAMPUS PUT ROUTE HIT')
+    const campusId = req.params.campusId
+
+    await Campus.update(req.body, {
+        where: { id }
+    })
+
+    const campus = await Campus.findByPk(campusId)
+    return res.json(campus)
+}))
+
 router.delete('/:campusId', asyncHandler(async (req, res) => {
-    const id = req.params.campusId
+    console.log('CAMPUS DELETE ROUTE HIT')
+    const campusId = req.params.campusId
     // console.log('DELETE ROUTER HIT')
 
-    const campus = await Campus.findByPk(id)
+    const campus = await Campus.findByPk(campusId)
 
     if (campus) {
         await campus.destroy()

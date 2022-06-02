@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf"
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
 const ADD_ONE = 'campus/ADD_ONE'
+const EDIT_ONE = 'campus/EDIT_ONE'
 const DELETE_ONE = 'campus/DELETE_ONE'
 
 const load = (campuses) => ({
@@ -19,6 +20,11 @@ const loadOne = (campus) => ({
 const addOne = (newCampus) => ({
     type: ADD_ONE,
     newCampus,
+})
+
+const editOne = (editedCampus) => ({
+    type: EDIT_ONE,
+    editedCampus
 })
 
 const deleteOne = (campusToDelete) => ({
@@ -81,11 +87,27 @@ export const addCampus = (campusData) => async(dispatch) => {
 
 }
 
+export const editCampus = (data, campusId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/campus/${campusId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+
+    if (response.ok) {
+        const editedCampus = await response.json()
+        dispatch(editOne(editedCampus))
+        return editedCampus
+    }
+}
+
 export const deleteCampus = (campusId) => async(dispatch) => {
     // console.log('DELETE THUNKKK HIT')
     // console.log(campusId, 'CAMPUS ID -- DELETE THUNK')
     const response = await csrfFetch(`/api/campus/${campusId}`, {
-        method: 'DELETE',
+        method: 'DELETE'
     })
     // console.log(response, 'THIS IS THE DELETE RESPONSE')
     if (response.ok) {
@@ -119,6 +141,15 @@ const campusReducer = (state = initialState, action) => {
                 ...state,
                 [action.newCampus.id]: action.campus
             }
+        case EDIT_ONE:
+            const updatedState = {
+                ...state,
+                [action.editedCampus.id]: {
+                    ...state[action.editedCampus.id],
+                    ...action.editedCampus
+                }
+            }
+            return updatedState
         case DELETE_ONE:
             const deleteState = {...state}
             delete deleteState[action.campusToDelete]

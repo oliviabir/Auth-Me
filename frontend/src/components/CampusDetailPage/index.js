@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getCampus, deleteCampus } from '../../store/campus';
 import CampusImageDetail from '../CampusImageDetail'
+import EditCampusForm from '../EditCampusForm';
 import './CampusPage.css'
 
 const CampusDetail = () => {
@@ -49,6 +50,7 @@ const CampusDetail = () => {
             <h2>Description</h2>
             <div>{campus.description}</div>
             <a href='/bookings'>Book a Tour</a>
+            <EditCampusForm campus={campus} />
             <button onClick={handleDelete}>
               Delete Campus
             </button>
