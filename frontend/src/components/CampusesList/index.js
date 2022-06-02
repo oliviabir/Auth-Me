@@ -13,18 +13,21 @@ const CampusList = () => {
     console.log(campuses, 'THIS IS CAMPUSES --- CAMPUS CARD')
 
     let Images
-    let imgArr = []
+    let imgObj = {}
     campuses.map((campus) => {
         Images = campus.Images
-        console.log(Images, '****images')
+        // console.log(Images, '****images')
         let arr = Object.values(Images)
-        console.log(arr, '*****arr')
-        console.log(arr[0], '****arr[0]')
-        // const cardImg = arr[0]
+        // console.log(arr, '*****arr')
+        // console.log(arr[0], '****arr[0]')
+        const cardImg = arr[0]
+        const values = Object.values(cardImg)
+        console.log(values, '****values')
+        console.log(values[2], 'values[2]')
         // console.log(cardImg.url, '****carImg.url')
         // imgArr.push(arr[0].url)
 
-        return imgArr
+        return imgObj
     })
 
     useEffect(() => {
