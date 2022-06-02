@@ -18,11 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users', key: 'id'}
       },
-      startDate: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      endDate: {
+      tourDate: {
         allowNull: false,
         type: Sequelize.DATE
       },

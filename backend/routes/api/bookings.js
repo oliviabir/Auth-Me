@@ -22,12 +22,9 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 const bookingValidators = [
-    check('startDate')
+    check('tourDate')
         .exists({ checkFalsy: true})
-        .withMessage('Please enter a start date'),
-    check('endDate')
-        .exists({ checkFalsy: true})
-        .withMessage('Please enter an end date'),
+        .withMessage('Please enter a tour date'),
     handleValidationErrors
 ]
 
@@ -35,15 +32,13 @@ router.post('/new', bookingValidators, asyncHandler(async (req, res) => {
     const {
         userId,
         campusId,
-        startDate,
-        endDate
+        tourDate,
     } = req.body
 
     const booking = await Booking.create({
         userId,
         campusId,
-        startDate,
-        endDate
+        tourDate,
     })
 
     return res.json(booking)

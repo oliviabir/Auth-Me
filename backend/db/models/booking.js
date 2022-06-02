@@ -11,13 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {model: 'Users', key: 'id'}
     },
-    startDate: {
+    tourDate: {
       allowNull: false,
       type: DataTypes.DATE,
-    },
-    endDate: {
-      allowNull: false,
-      type: DataTypes.DATE
     }
   }, {});
   Booking.associate = function(models) {
