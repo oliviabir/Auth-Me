@@ -16,7 +16,7 @@ const CampusCard = () => {
     }, [dispatch])
 
     return campuses.map((campus) => (
-      <div key={campus.name}>
+      <div key={campus.id}>
           <div>
               <a href={`/campus/${campus.id}`} id='campus-name'>{campus.name}</a>
               <br></br>

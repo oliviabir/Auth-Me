@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf"
 const LOAD = 'campus/LOAD'
 const LOAD_ONE = 'campus/LOAD_ONE'
 const ADD_ONE = 'campus/ADD_ONE'
+const DELETE_ONE = 'campus/DELETE_ONE'
 
 const load = (campuses) => ({
     type: LOAD,
@@ -18,6 +19,11 @@ const loadOne = (campus) => ({
 const addOne = (newCampus) => ({
     type: ADD_ONE,
     newCampus,
+})
+
+const deleteOne = (campusToDelete) => ({
+    type: DELETE_ONE,
+    campusToDelete
 })
 
 export const getCampusList = () => async(dispatch) => {
@@ -68,10 +74,23 @@ export const addCampus = (campusData) => async(dispatch) => {
         const campus = await response.json();
         dispatch(addOne(campus))
         return campus;
+
     } catch (error) {
         throw error;
     }
 
+}
+
+export const deleteCampus = (campusId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/campus/${campusId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        const deletedCampus = await response.json()
+        dispatch(deleteOne(deletedCampus))
+        return deletedCampus;
+    }
 }
 
 const initialState = {}
