@@ -86,6 +86,7 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
 
 router.delete('/:campusId', asyncHandler(async (req, res) => {
     const id = req.params.campusId
+    // console.log('DELETE ROUTER HIT')
 
     const campus = await Campus.findByPk(id)
 

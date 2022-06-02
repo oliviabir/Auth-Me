@@ -82,10 +82,12 @@ export const addCampus = (campusData) => async(dispatch) => {
 }
 
 export const deleteCampus = (campusId) => async(dispatch) => {
+    // console.log('DELETE THUNKKK HIT')
+    // console.log(campusId, 'CAMPUS ID -- DELETE THUNK')
     const response = await csrfFetch(`/api/campus/${campusId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
     })
-
+    // console.log(response, 'THIS IS THE DELETE RESPONSE')
     if (response.ok) {
         const deletedCampus = await response.json()
         dispatch(deleteOne(deletedCampus))
@@ -117,6 +119,10 @@ const campusReducer = (state = initialState, action) => {
                 ...state,
                 [action.newCampus.id]: action.campus
             }
+        case DELETE_ONE:
+            const deleteState = {...state}
+            delete deleteState[action.campusToDelete]
+            return deleteState
         default:
             return state
     }
