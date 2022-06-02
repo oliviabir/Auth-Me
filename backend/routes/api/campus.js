@@ -88,15 +88,15 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
     return res.json(campus)
 }))
 
-router.put('/:campusId', campusValidators, asyncHandler(async (req, res) => {
+router.put('/:id', campusValidators, asyncHandler(async (req, res) => {
     console.log('CAMPUS PUT ROUTE HIT')
-    const campusId = req.params.campusId
+    const id = req.params.id
 
     await Campus.update(req.body, {
         where: { id }
     })
 
-    const campus = await Campus.findByPk(campusId)
+    const campus = await Campus.findByPk(id)
     return res.json(campus)
 }))
 
