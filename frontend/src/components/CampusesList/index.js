@@ -42,7 +42,7 @@ const CampusList = () => {
             {
                 campuses ?
                 <div>
-                    <div>
+                    <div className='campus-child-card'>
                         <img style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}/>
                         <NavLink to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</NavLink>
                         <br></br>
