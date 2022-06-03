@@ -285,7 +285,7 @@ module.exports = {
       },
       {
         campusId: 14,
-        url: 'https://unsplash.com/photos/LgHghP14qeU',
+        url: 'https://images.unsplash.com/photo-1623607769583-f95269221eaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NDI3MzU2Mg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
         description: 'Boston College',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -383,7 +383,7 @@ module.exports = {
       },
       {
         campusId: 19,
-        url: 'https://unsplash.com/photos/VHFBDTwiIy4',
+        url: 'https://images.unsplash.com/photo-1561063139-e183e66909c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NDI3Mzk5NQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
         description: 'Florida',
         createdAt: new Date(),
         updatedAt: new Date()
