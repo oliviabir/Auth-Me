@@ -58,5 +58,11 @@ const requireAuth = [
     }
 ];
 
+const currentUser = (req, res) => {
+  const { token } = req.cookies;
+  let user = jwt.verify(token, secret);
+  return user.data;
+};
 
-module.exports = { setTokenCookie, restoreUser, requireAuth };
+
+module.exports = { setTokenCookie, restoreUser, requireAuth, currentUser };

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Splash from "./components/Splash";
 import SignupFormPage from "./components/SignUpFormPage";
 import Navigation from "./components/Navigation";
 import CampusList from "./components/CampusesList";
 import CampusDetailPage from "./components/CampusDetailPage"
 import AddCampusForm from "./components/AddCampusForm";
+import AddBookingForm from "./components/AddBookingForm";
 import * as sessionActions from './store/session'
+import { getBookings } from "./store/booking";
+import { getCampusList } from "./store/campus"
 
 function App() {
   const dispatch = useDispatch()
@@ -19,6 +22,14 @@ function App() {
       .then(() => setIsLoaded(true))
   })
 
+  // const campuses = useSelector(state => state.campuses)
+  // const bookings = useSelector(state => state.bookings)
+
+  // useEffect(() => {
+  //   dispatch(getCampusList())
+  //   dispatch(getBookings())
+  // }, [dispatch])
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -27,7 +38,7 @@ function App() {
           <Route path='/' exact>
             <Splash />
           </Route>
-          <Route path='/signup'>
+          <Route path='/signup' exact>
             <SignupFormPage />
           </Route>
           <Route path='/campus' exact>
@@ -39,6 +50,9 @@ function App() {
           <Route path='/campus/:campusId'>
             <CampusDetailPage />
           </Route>
+          {/* <Route path='/bookings'>
+            <AddBookingForm campuses={campuses} />
+          </Route> */}
         </Switch>
       )}
     </>

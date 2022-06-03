@@ -31,3 +31,15 @@
     color: rgb(65, 220, 201);
     transition: all 0s ease-in-out .25s;
 }
+
+.campus-child-card {
+    width: 30%px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.card-text {
+    text-align: center;
+    color: antiquewhite;
+    text-shadow: 1px 1px 2px black;
+}
