@@ -9,10 +9,6 @@ const CampusCard = () => {
     const dispatch = useDispatch()
     const campusesObj = useSelector(state => state.campus)
     const campuses = Object.values(campusesObj)
-    // console.log(campusesObj, 'THIS IS CAMPUSES OBJ -- CAMPUS CARD')
-    // console.log(campuses, 'THIS IS CAMPUSES --- CAMPUS CARD')
-
-
 
     useEffect(() => {
         dispatch(getCampusList())
