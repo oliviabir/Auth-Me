@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { addCampus } from "../../store/campus";
 import { ValidationError } from "../../utils/validationError";
+import AddCampusImage from "../AddCampusImage/AddCampusImage";
 import './AddCampusForm.css'
 
 const AddCampusForm = () => {
@@ -18,8 +19,8 @@ const AddCampusForm = () => {
     const [description, setDescription] = useState('')
     const [tuition, setTuition] = useState(0)
     const [inStateTuition, setInStateTuition] = useState(0)
-    const [publicSchool, setPublicSchool] = useState(false)
-    const [privateSchool, setPrivateSchool] = useState(false)
+    const [publicSchool, setPublicSchool] = useState(true)
+    const [privateSchool, setPrivateSchool] = useState(true)
     const [publicChecked, setPublicChecked] = useState(false)
     const [privateChecked, setPrivateChecked] = useState(false)
     const [errors, setErrors] = useState({})
@@ -28,12 +29,14 @@ const AddCampusForm = () => {
         setPublicChecked(!publicChecked)
         setPublicSchool(!publicSchool)
         setPrivateChecked(false)
+        console.log(publicSchool, 'public school')
     }
 
     const handlePrivateChange = () => {
         setPrivateChecked(!privateChecked)
         setPrivateSchool(!privateSchool)
         setPublicChecked(false)
+        console.log(privateSchool, 'private school')
     }
 
     const handleSubmit = async (e) => {
@@ -71,82 +74,85 @@ const AddCampusForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='form'>
-            {/* <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul> */}
-            <label>School Name
-                <input
-                    type='text'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-            </label>
-            <label>City
-                <input
-                    type='text'
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    required
-                />
-            </label>
-            <label>State
-                <input
-                    type='text'
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    required
-                />
-            </label>
-            <label>Description
-                <input
-                    type='textarea'
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                />
-            </label>
-            <label>Tuition
-                <input
-                    type='number'
-                    value={tuition}
-                    onChange={(e) => setTuition(e.target.value)}
-                    required
-                />
-            </label>
-            <label>In State Tuition
-                <input
-                    type='number'
-                    value={inStateTuition}
-                    onChange={(e) => setInStateTuition(e.target.value)}
-                />
-            </label>
-            <div>
-                <label>
+        <div>
+            <form onSubmit={handleSubmit} className='form'>
+                {/* <ul>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul> */}
+                <label>School Name
                     <input
-                        type='radio'
-                        value={publicSchool}
-                        checked={publicChecked ? true : false}
-                        onChange={handlePublicChange}
+                        type='text'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
                     />
-                    Public School
                 </label>
-            </div>
-            <div>
-                <label>
+                <label>City
                     <input
-                        type='radio'
-                        value={privateSchool}
-                        checked={privateChecked ? true : false}
-                        onChange={handlePrivateChange}
+                        type='text'
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
                     />
-                    Private School
                 </label>
-            </div>
-            <Link to='/campus'>Cancel</Link>
-            <button type='submit'>Submit</button>
-        </form>
+                <label>State
+                    <input
+                        type='text'
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>Description
+                    <input
+                        type='textarea'
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>Tuition
+                    <input
+                        type='number'
+                        value={tuition}
+                        onChange={(e) => setTuition(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>In State Tuition
+                    <input
+                        type='number'
+                        value={inStateTuition}
+                        onChange={(e) => setInStateTuition(e.target.value)}
+                    />
+                </label>
+                <div>
+                    <label>
+                        <input
+                            type='radio'
+                            value={publicSchool}
+                            checked={publicChecked ? true : false}
+                            onChange={handlePublicChange}
+                        />
+                        Public School
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input
+                            type='radio'
+                            value={privateSchool}
+                            checked={privateChecked ? true : false}
+                            onChange={handlePrivateChange}
+                        />
+                        Private School
+                    </label>
+                </div>
+                <Link to='/campus'>Cancel</Link>
+                <button type='submit'>Submit</button>
+            </form>
+            <AddCampusImage />
+        </div>
     )
 }
 

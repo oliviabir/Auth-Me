@@ -70,7 +70,7 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         tuition,
         inStatetuition,
         public,
-        private
+        private,
     } = req.body
 
     const campus = await Campus.create({
@@ -82,7 +82,7 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         tuition,
         inStatetuition,
         public,
-        private
+        private,
     })
 
     return res.json(campus)
