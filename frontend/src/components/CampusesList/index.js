@@ -12,26 +12,26 @@ const CampusList = () => {
     console.log(campusesObj, 'THIS IS CAMPUSES OBJ -- CAMPUS CARD')
     console.log(campuses, 'THIS IS CAMPUSES --- CAMPUS CARD')
 
-    // let Images
-    // let imgArr = []
-    // campuses.map((campus) => {
-    //     Images = campus.Images
-    //     // console.log(Images, '****images')
-    //     let arr = Object.values(Images)
-    //     // console.log(arr, '*****arr')
-    //     // console.log(arr[0], '****arr[0]')
-    //     const cardImg = arr[0]
-    //     const values = Object.values(cardImg)
-    //     // console.log(values, '****values')
-    //     // console.log(values[2], 'values[2]')
-    //     // console.log(cardImg.url, '****carImg.url')
-    //     const imageURL = values[2]
-    //     imgArr.push(imageURL)
-    //     console.log(imgArr, '***imgArr')
+    let Images
+    let imgArr = []
+    campuses.map((campus) => {
+        Images = campus.Images
+        // console.log(Images, '****images')
+        let arr = Object.values(Images)
+        // console.log(arr, '*****arr')
+        // console.log(arr[0], '****arr[0]')
+        const cardImg = arr[0]
+        const values = Object.values(cardImg)
+        // console.log(values, '****values')
+        console.log(values[2], 'values[2]')
+        // console.log(cardImg.url, '****carImg.url')
+        const imageURL = values[2]
+        imgArr.push(imageURL)
+        // console.log(imgArr, '***imgArr')
 
 
-    //     return imgArr
-    // })
+        return imgArr
+    })
 
     useEffect(() => {
         dispatch(getCampusList())
@@ -43,7 +43,7 @@ const CampusList = () => {
                 campuses ?
                 <div>
                     <div>
-                        {/* <img style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}/> */}
+                        <img style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}/>
                         <NavLink to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</NavLink>
                         <br></br>
                         {campus.city}
