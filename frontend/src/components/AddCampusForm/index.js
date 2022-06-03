@@ -20,8 +20,21 @@ const AddCampusForm = () => {
     const [inStateTuition, setInStateTuition] = useState(0)
     const [publicSchool, setPublicSchool] = useState(false)
     const [privateSchool, setPrivateSchool] = useState(false)
+    const [publicChecked, setPublicChecked] = useState(false)
+    const [privateChecked, setPrivateChecked] = useState(false)
     const [errors, setErrors] = useState({})
 
+    const handlePublicChange = () => {
+        setPublicChecked(!publicChecked)
+        setPublicSchool(!publicSchool)
+        setPrivateChecked(false)
+    }
+
+    const handlePrivateChange = () => {
+        setPrivateChecked(!privateChecked)
+        setPrivateSchool(!privateSchool)
+        setPublicChecked(false)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -109,44 +122,28 @@ const AddCampusForm = () => {
                     onChange={(e) => setInStateTuition(e.target.value)}
                 />
             </label>
-            <label>Public
-                <select
-                    type='boolean'
-                    // value={publicSchool}
-                    >
-                    <option
+            <div>
+                <label>
+                    <input
+                        type='radio'
                         value={publicSchool}
-                        onChange={(e) => setPublicSchool(e.target.value)}
-                    >
-                        true
-                    </option>
-                    <option
-                        value={publicSchool}
-                        onChange={(e) => setPublicSchool(e.target.value)}
-                    >
-                        false
-                    </option>
-                </select>
-            </label>
-            <label>Private
-                <select
-                    type='boolean'
-                    // value={privateSchool}
-                    >
-                    <option
+                        checked={publicChecked ? true : false}
+                        onChange={handlePublicChange}
+                    />
+                    Public School
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input
+                        type='radio'
                         value={privateSchool}
-                        onChange={(e) => setPrivateSchool(e.target.value)}
-                    >
-                        true
-                    </option>
-                    <option
-                        value={privateSchool}
-                        onChange={(e) => setPrivateSchool(e.target.value)}
-                    >
-                        false
-                    </option>
-                </select>
-            </label>
+                        checked={privateChecked ? true : false}
+                        onChange={handlePrivateChange}
+                    />
+                    Private School
+                </label>
+            </div>
             <Link to='/campus'>Cancel</Link>
             <button type='submit'>Submit</button>
         </form>

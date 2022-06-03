@@ -2,7 +2,13 @@ import React from 'react'
 
 const Splash = () => {
   return (
-    <h1>Splash</h1>
+    <>
+      <h1>Splash</h1>
+      <h1>Splash</h1>
+      <h1>Splash</h1>
+      <h1>Splash</h1>
+      <h1>Splash</h1>
+    </>
   )
 }
 
