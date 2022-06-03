@@ -42,13 +42,13 @@ const CampusCard = () => {
             {
                 campuses ?
                 <div>
-                    <div className='campus-child-card'>
-                        <img style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}/>
-                        {console.log(imgArr[campus.id -1], 'IMAGE IN DIV')}
-                        <NavLink to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</NavLink>
-                        <br></br>
-                        {campus.city}
-                        {campus.state}
+                    <div className='campus-child-card' style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}>
+                        <div className='card-text'>
+                            <NavLink to={`/campus/${campus.id}`} id='campus-name' style={{color: 'antiquewhite'}}>{campus.name}</NavLink>
+                            <br></br>
+                            {campus.city}
+                            {campus.state}
+                        </div>
                     </div>
                     <br></br>
                 </div>
