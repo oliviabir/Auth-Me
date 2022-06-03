@@ -5,735 +5,441 @@ module.exports = {
       return queryInterface.bulkInsert('Images', [
       {
         campusId: 1,
-        url: 'https://images.app.goo.gl/gUDdyc5ScVLkf3wK7',
+        url: 'https://unsplash.com/photos/I-NnLj-PsmQ',
         description: 'Stanford',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 1,
-        url: 'https://images.app.goo.gl/oBJRAGHmA6kyHSr26',
+        url: 'https://unsplash.com/photos/AuJHjDF-BF0',
         description: 'Stanford',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 1,
-        url: 'https://images.app.goo.gl/gh43vkCE5pxcquWTA',
-        description: 'Stanford',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 1,
-        url: 'https://images.app.goo.gl/HcLn2asTPM7qe6dU7',
-        description: 'Stanford',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 1,
-        url: 'https://images.app.goo.gl/FyYpurU3B887sZnU9',
+        url: 'https://unsplash.com/photos/Fsjs5NS-QLw',
         description: 'Stanford',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 2,
-        url: 'https://images.app.goo.gl/UVMpyYFKxCruuuwM8',
+        url: 'https://unsplash.com/photos/XgcdAE1Gqlg',
         description: 'Columbia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 2,
-        url: 'https://images.app.goo.gl/mcrF6gcWHSuChPqR9',
+        url: 'https://unsplash.com/photos/I-NnLj-PsmQ',
         description: 'Columbia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 2,
-        url: 'https://images.app.goo.gl/xp3wiPUYZeakRUtW8',
-        description: 'Columbia',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 2,
-        url: 'https://images.app.goo.gl/SRyeEptNbXbTpVji9',
-        description: 'Columbia',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 2,
-        url: 'https://images.app.goo.gl/ZG5BwrZbeapdtAW57',
+        url: 'https://unsplash.com/photos/s8fqX4_dBaM',
         description: 'Columbia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 3,
-        url: 'https://images.app.goo.gl/YPDeLG1JxEwrgYRx7',
+        url: 'https://unsplash.com/photos/hWqrI3CyPuM',
         description: 'Harvard',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 3,
-        url: 'https://images.app.goo.gl/f4yK1VKVsqqbw4FS8',
+        url: 'https://unsplash.com/photos/T-tVt4xsCdE',
         description: 'Harvard',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 3,
-        url: 'https://images.app.goo.gl/x2gKpGpNYeiR4qZR9',
-        description: 'Harvard',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 3,
-        url: 'https://images.app.goo.gl/VxqHBi2U2qYSgZmK8',
-        description: 'Harvard',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 3,
-        url: 'https://images.app.goo.gl/1t6pJTraD5kNDfcMA',
+        url: 'https://unsplash.com/photos/dLifkLvc5t8',
         description: 'Harvard',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 4,
-        url: 'https://images.app.goo.gl/BSWcmZS3D7AnXovLA',
+        url: 'https://unsplash.com/photos/hthSFNDYU_s',
         description: 'MIT',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 4,
-        url: 'https://images.app.goo.gl/cPmgpc8u53XLKx2v5',
+        url: 'https://unsplash.com/photos/Qj-5RbUb1UE',
         description: 'MIT',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 4,
-        url: 'https://images.app.goo.gl/EssFDFNxr9DvLupe8',
-        description: 'MIT',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 4,
-        url: 'https://images.app.goo.gl/uguUZHmngRCczTEY8',
-        description: 'MIT',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 4,
-        url: 'https://images.app.goo.gl/H4AA87ufAan77hQu5',
+        url: 'https://unsplash.com/photos/QGX7FpGX980',
         description: 'MIT',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 5,
-        url: 'https://images.app.goo.gl/XrUXabaeJSBzGkQd7',
+        url: 'https://unsplash.com/photos/Vos_2og3jZg',
         description: 'Yale',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 5,
-        url: 'https://images.app.goo.gl/w1c4mQvg96ycmW4r8',
+        url: 'https://unsplash.com/photos/CyvK_Z2pYXg',
         description: 'Yale',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 5,
-        url: 'https://images.app.goo.gl/rAhmsb3gsCK8ZWw88',
-        description: 'Yale',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 5,
-        url: 'https://images.app.goo.gl/t1S9gwNywYTVnbPx8',
-        description: 'Yale',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 5,
-        url: 'https://images.app.goo.gl/SeBoRAwVk9M4SSBh7',
+        url: 'https://unsplash.com/photos/omeaHbEFlN4',
         description: 'Yale',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 6,
-        url: 'https://images.app.goo.gl/g4QA6LYyfqX6SmdM8',
+        url: 'https://unsplash.com/photos/A0Qs7iXf1l0',
         description: 'Chicago',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 6,
-        url: 'https://images.app.goo.gl/sjuznajBPTnBnjRB8',
+        url: 'https://unsplash.com/photos/ba8bUAKjYWg',
         description: 'Chicago',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 6,
-        url: 'https://images.app.goo.gl/zfkM5uRpUmzoMkux8',
-        description: 'Chicago',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 6,
-        url: 'https://images.app.goo.gl/TQVYjMoHjAZEqDjU8',
-        description: 'Chicago',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 6,
-        url: 'https://images.app.goo.gl/YwdkW7abbMRPK8bx6',
+        url: 'https://unsplash.com/photos/eLCTitD23xo',
         description: 'Chicago',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 7,
-        url: 'https://images.app.goo.gl/XS3MzGCv9jqkK5wW8',
+        url: 'https://unsplash.com/photos/FqDTnSdb-PM',
         description: 'UPenn',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 7,
-        url: 'https://images.app.goo.gl/otP51oT9ZVkRcjo26',
+        url: 'https://unsplash.com/photos/LbuF2is_IyU',
         description: 'UPenn',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 7,
-        url: 'https://images.app.goo.gl/hgQcYthjJBWU4NXc8',
-        description: 'UPenn',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 7,
-        url: 'https://images.app.goo.gl/s7DxNPQf1k3Fbsbu8',
-        description: 'UPenn',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 7,
-        url: 'https://images.app.goo.gl/cLvt5imcXi7ds8Ma9',
+        url: 'https://unsplash.com/photos/1g9k67e63us',
         description: 'UPenn',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 8,
-        url: 'https://images.app.goo.gl/yLKZZNdbXYufJB3s8',
+        url: 'https://unsplash.com/photos/rz6jAofLz28',
         description: 'Duke',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 8,
-        url: 'https://images.app.goo.gl/pV2SHgcjH6juF1Rf7',
+        url: 'https://unsplash.com/photos/SOnbCnBKNaU',
         description: 'Duke',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 8,
-        url: 'https://images.app.goo.gl/gMGTk86ktb5rfe3y5',
-        description: 'Duke',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 8,
-        url: 'https://images.app.goo.gl/YqatKtiBD7BTF2WK6',
-        description: 'Duke',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 8,
-        url: 'https://images.app.goo.gl/mUM3DUvp77VEwxkS7',
+        url: 'https://unsplash.com/photos/OUJEGUDTltc',
         description: 'Duke',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 9,
-        url: 'https://images.app.goo.gl/jFyCEGMnk2ENygYe8',
+        url: 'https://unsplash.com/photos/B8SemO8zp7I',
         description: 'Arkansas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 9,
-        url: 'https://images.app.goo.gl/3855rJW5yFzjGuxQ6',
+        url: 'https://unsplash.com/photos/cQ09dIfwcB0',
         description: 'Arkansas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 9,
-        url: 'https://images.app.goo.gl/552gCWdWsqWjGbNr8',
-        description: 'Arkansas',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 9,
-        url: 'https://images.app.goo.gl/SRB3VwZjpNfp7P8C9',
-        description: 'Arkansas',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 9,
-        url: 'https://images.app.goo.gl/bMQBeJEwxjAhd8Fg8',
+        url: 'https://unsplash.com/photos/wsESL4NEkdM',
         description: 'Arkansas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 10,
-        url: 'https://images.app.goo.gl/AQTKqNGUmGqbbtre7',
+        url: 'https://unsplash.com/photos/8xhnoY5ua9o',
         description: 'UMich',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 10,
-        url: 'https://images.app.goo.gl/9fWbgw29JutQqmNr8',
+        url: 'https://unsplash.com/photos/onOdABjwC0M',
         description: 'UMich',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 10,
-        url: 'https://images.app.goo.gl/MsdqfaQiKT3NxHXU6',
-        description: 'UMich',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 10,
-        url: 'https://images.app.goo.gl/cCgxt5f2n2Aoj5ZW6',
-        description: 'UMich',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 10,
-        url: 'https://images.app.goo.gl/zczYHWdiqEEqyX9RA',
+        url: 'https://unsplash.com/photos/tDSmhEFfasI',
         description: 'UMich',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 11,
-        url: 'https://images.app.goo.gl/XTNchd93YBQiJ1pk6',
+        url: 'https://unsplash.com/photos/J2obtYIs7S8',
         description: 'UW',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 11,
-        url: 'https://images.app.goo.gl/RaxD7CgXyDkoBuuw5',
+        url: 'https://unsplash.com/photos/eZC7jKh0K40',
         description: 'UW',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 11,
-        url: 'https://images.app.goo.gl/5XLAAY2uygwd64Fe7',
-        description: 'UW',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 11,
-        url: 'https://images.app.goo.gl/7QMNnNUHZww9jy3L7',
-        description: 'UW',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 11,
-        url: 'https://images.app.goo.gl/rmDMgjiQTaUA1Y9y9',
+        url: 'https://unsplash.com/photos/u_Bah910f4w',
         description: 'UW',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 12,
-        url: 'https://images.app.goo.gl/s9prX5ynxwyoMqom7',
+        url: 'https://unsplash.com/photos/bwwh_OoEEAE',
         description: 'WWU',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 12,
-        url: 'https://images.app.goo.gl/Afjo4k7itPKG7GRT9',
+        url: 'https://unsplash.com/photos/gCHfScq3VJc',
         description: 'WWU',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 12,
-        url: 'https://images.app.goo.gl/oxnrMUJFqZPVKa4n9',
-        description: 'WWU',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 12,
-        url: 'https://images.app.goo.gl/rqdVd4CSVkaaHotk7',
-        description: 'WWU',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 12,
-        url: 'https://images.app.goo.gl/EkJ5bk5Qjkz9nFCdA',
+        url: 'https://unsplash.com/photos/0Qz0zj5-6hY',
         description: 'WWU',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 13,
-        url: 'https://images.app.goo.gl/x6MkEt7josqoZEJ76',
+        url: 'https://unsplash.com/photos/FD2VpTehplE',
         description: 'Evergreen',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 13,
-        url: 'https://images.app.goo.gl/1Qry74jvDygP5qJD8',
+        url: 'https://unsplash.com/photos/j6Jfexgca0M',
         description: 'Evergreen',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 13,
-        url: 'https://images.app.goo.gl/wyHwQ4UH1WsmjG1r6',
-        description: 'Evergreen',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 13,
-        url: 'https://images.app.goo.gl/YfAhmqkHns1dVN2B9',
-        description: 'Evergreen',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 13,
-        url: 'https://images.app.goo.gl/fbjGNTTSxkhPs84w6',
+        url: 'https://unsplash.com/photos/2RouMSg9Rnw',
         description: 'Evergreen',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 14,
-        url: 'https://images.app.goo.gl/Du911Fw5kbv7KasP8',
+        url: 'https://unsplash.com/photos/UpYF6ibFud0',
         description: 'Boston College',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 14,
-        url: 'https://images.app.goo.gl/dNK7JckfHjYcvCjN8',
+        url: 'https://unsplash.com/photos/LgHghP14qeU',
         description: 'Boston College',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 14,
-        url: 'https://images.app.goo.gl/Z9QB61DdEmEhd9cq9',
-        description: 'Boston College',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 14,
-        url: 'https://images.app.goo.gl/YepUNiHQFRspdamf8',
-        description: 'Boston College',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 14,
-        url: 'https://images.app.goo.gl/cCUYDBdNTVcMnuzJ8',
+        url: 'https://unsplash.com/photos/dwYY9NDj4_Q',
         description: 'Boston College',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 15,
-        url: 'https://images.app.goo.gl/1ihczbb4uzebhRS19',
+        url: 'https://unsplash.com/photos/_RWHOzKnv1M',
         description: 'UCLA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 15,
-        url: 'https://images.app.goo.gl/xxACGNuhiPRghTLt9',
+        url: 'https://unsplash.com/photos/irVlh7YbQRE',
         description: 'UCLA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 15,
-        url: 'https://images.app.goo.gl/FXYG6RkSdXTifnKm8',
-        description: 'UCLA',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 15,
-        url: 'https://images.app.goo.gl/34fgxevhoKQvM4j17',
-        description: 'UCLA',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 15,
-        url: 'https://images.app.goo.gl/WBjq1kZnE6CuuaND9',
+        url: 'https://unsplash.com/photos/aiGYVfFsshM',
         description: 'UCLA',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 16,
-        url: 'https://images.app.goo.gl/dmtb7gFWNEVUTLPy5',
+        url: 'https://unsplash.com/photos/E57BNhGGaGA',
         description: 'Rice',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 16,
-        url: 'https://images.app.goo.gl/xpLD9UUVnFzGXuqM9',
+        url: 'https://unsplash.com/photos/SYTO3xs06fU',
         description: 'Rice',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 16,
-        url: 'https://images.app.goo.gl/rCBHSrmzJpUytN4A8',
-        description: 'Rice',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 16,
-        url: 'https://images.app.goo.gl/L6wD6AckM6WoD3kg8',
-        description: 'Rice',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 16,
-        url: 'https://images.app.goo.gl/pZzGafwim67Byew78',
+        url: 'https://unsplash.com/photos/9NUG56VAt4A',
         description: 'Rice',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 17,
-        url: 'https://images.app.goo.gl/iDnCtEnvfPwsZhE98',
+        url: 'https://unsplash.com/photos/gU3rHe3HF54',
         description: 'Georgetown',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 17,
-        url: 'https://images.app.goo.gl/M9iieu3rLfUFBP5m7',
+        url: 'https://unsplash.com/photos/ewGMqs2tmJI',
         description: 'Georgetown',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 17,
-        url: 'https://images.app.goo.gl/FEt7Y5Pz65yGoXxa6',
-        description: 'Georgetown',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 17,
-        url: 'https://images.app.goo.gl/TypKGufiUASPxqJAA',
-        description: 'Georgetown',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 17,
-        url: 'https://images.app.goo.gl/4c85SBXfYgsw7XnT8',
+        url: 'https://unsplash.com/photos/EI5l9m83Xb4',
         description: 'Georgetown',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 18,
-        url: 'https://images.app.goo.gl/W2bv4m2oTw7i17vC6',
+        url: 'https://unsplash.com/photos/FlGV4mTmtA8',
         description: 'UofL',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 18,
-        url: 'https://images.app.goo.gl/SMycCGfe57FN7dqi9',
+        url: 'https://unsplash.com/photos/EdvLiVfQ36c',
         description: 'UofL',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 18,
-        url: 'https://images.app.goo.gl/U8rx45FxFHRV6nJi6',
-        description: 'UofL',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 18,
-        url: 'https://images.app.goo.gl/e6xV1FzWaqmfe6A88',
-        description: 'UofL',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 18,
-        url: 'https://images.app.goo.gl/oH8WruzpUdGuZeXf6',
+        url: 'https://unsplash.com/photos/1MLJBD3twCU',
         description: 'UofL',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 19,
-        url: 'https://images.app.goo.gl/e8hJckwibEeR29kU6',
+        url: 'https://unsplash.com/photos/VHFBDTwiIy4',
         description: 'Florida',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 19,
-        url: 'https://images.app.goo.gl/h9pNmK1feZmaNZFV8',
+        url: 'https://unsplash.com/photos/XkKCui44iM0',
         description: 'Florida',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 19,
-        url: 'https://images.app.goo.gl/3kR7Wnr3f9vGpz5L7',
-        description: 'Florida',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 19,
-        url: 'https://images.app.goo.gl/RUsL4bmLq3jTW37Y7',
-        description: 'Florida',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 19,
-        url: 'https://images.app.goo.gl/ySCCVyuP8ah7Qf8v6',
+        url: 'https://unsplash.com/photos/VyyNcb4plSM',
         description: 'Florida',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 20,
-        url: 'https://images.app.goo.gl/nyA7HA3F2q99MrDA7',
+        url: 'https://unsplash.com/photos/3aVlWP-7bg8',
         description: 'Georgia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 20,
-        url: 'https://images.app.goo.gl/AQUZrDeZ4Dvyzxhf9',
+        url: 'https://unsplash.com/photos/kuEMUoDZepY',
         description: 'Georgia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 20,
-        url: 'https://images.app.goo.gl/uiRPbqna97x4wrJA9',
-        description: 'Georgia',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 20,
-        url: 'https://images.app.goo.gl/wcPjjPAg6qHfTEj16',
-        description: 'Georgia',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 20,
-        url: 'https://images.app.goo.gl/MqZgA77HSbxE84SC7',
+        url: 'https://unsplash.com/photos/y3BBVEpMl4E',
         description: 'Georgia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 21,
-        url: 'https://images.app.goo.gl/Eya1Uwef8oSkXdcP8',
+        url: 'https://unsplash.com/photos/txy8-jHMNZI',
         description: 'A&M',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 21,
-        url: 'https://images.app.goo.gl/LsNwbsEeHnJHdwRT8',
+        url: 'https://unsplash.com/photos/B-HnsuuouSE',
         description: 'A&M',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         campusId: 21,
-        url: 'https://images.app.goo.gl/y2CUSW8CkJ1Ntg7MA',
-        description: 'A&M',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 21,
-        url: 'https://images.app.goo.gl/vfAeFDTjNUbSqmMH7',
-        description: 'A&M',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        campusId: 21,
-        url: 'https://images.app.goo.gl/EzudqPia1DFkugbw5',
+        url: 'https://unsplash.com/photos/hPkb0qGRUTw',
         description: 'A&M',
         createdAt: new Date(),
         updatedAt: new Date()
