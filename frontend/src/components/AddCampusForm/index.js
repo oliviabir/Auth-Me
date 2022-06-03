@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { addCampus } from "../../store/campus";
 import { ValidationError } from "../../utils/validationError";
-import AddCampusImage from "../AddCampusImage/AddCampusImage";
 import './AddCampusForm.css'
 
 const AddCampusForm = () => {

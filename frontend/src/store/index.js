@@ -3,13 +3,11 @@ import thunk from "redux-thunk";
 import bookingReducer from "./booking.js";
 import campusReducer from "./campus.js";
 import sessionReducer from './session.js'
-import imageReducer from "./image.js";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   campus: campusReducer,
   booking: bookingReducer,
-  image: imageReducer
 });
 
 let enhancer;

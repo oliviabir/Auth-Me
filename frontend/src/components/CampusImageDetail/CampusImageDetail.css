@@ -1,0 +1,25 @@
+/* .detail-image-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    one one two
+    one one three
+    ;
+}
+
+.image-one-container {
+    grid-area: one;
+}
+
+.image-two-container {
+    grid-area: two;
+    width: 25%;
+    height: 100px;
+}
+
+.image-three-container {
+    grid-area: three;
+    width: 25%;
+    height: 100px;
+} */
