@@ -23,7 +23,7 @@ const AddCampusForm = () => {
     const [privateSchool, setPrivateSchool] = useState(true)
     const [publicChecked, setPublicChecked] = useState(false)
     const [privateChecked, setPrivateChecked] = useState(false)
-    const [images, setImages] = useState([{url: ''}])
+    const [url, setUrl] = useState('')
     const [alt, setAlt] = useState('')
     const [errors, setErrors] = useState({})
 
@@ -56,7 +56,7 @@ const AddCampusForm = () => {
             inStateTuition,
             publicSchool,
             privateSchool,
-            images,
+            url,
             alt
         }
 
@@ -155,14 +155,14 @@ const AddCampusForm = () => {
                 <div>
                 <input
                 type='text'
-                value={images || ''}
+                value={url}
                 required
                 placeholder='Enter Image URL'
-                onChange={(e) => setImages(e.target.value)}
+                onChange={(e) => setUrl(e.target.value)}
             />
             <input
                 type='text'
-                value={alt || ''}
+                value={alt}
                 required
                 placeholder='Description of Image'
                 onChange={(e) => setAlt(e.target.value)}

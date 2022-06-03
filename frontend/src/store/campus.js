@@ -140,7 +140,7 @@ const campusReducer = (state = initialState, action) => {
         case ADD_ONE:
             return {
                 ...state,
-                [action.newCampus.id]: action.campus
+                [action.newCampus.id]: action.newCampus
             }
         case EDIT_ONE:
             const updatedState = {

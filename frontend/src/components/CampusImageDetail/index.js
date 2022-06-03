@@ -2,11 +2,13 @@ import React from 'react'
 import './CampusImageDetail.css'
 
 
-const CampusImageDetail = (campusId) => {
-  // const image = campus.Image
-  // console.log(image, 'IMAGE CAMPUS DIV')
+const CampusImageDetail = (campus) => {
+  const images = campus.Images
+  console.log(images, 'IMAGESSS')
   return (
-    <div>CampusImageDetail</div>
+    <div>
+
+    </div>
   )
 }
 
