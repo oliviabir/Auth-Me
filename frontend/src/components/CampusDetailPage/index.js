@@ -42,7 +42,7 @@ const CampusDetail = () => {
     <>
       {
         campus ?
-        <div className='campus-container'>
+        <div className='campus-detail-container'>
             <h1>{campus.name}</h1>
             <h4>{campus.city}, {campus.state}</h4>
             <h3>Tuition: ${campus.tuition}</h3>
