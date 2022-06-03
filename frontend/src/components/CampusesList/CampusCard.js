@@ -9,8 +9,8 @@ const CampusCard = () => {
     const dispatch = useDispatch()
     const campusesObj = useSelector(state => state.campus)
     const campuses = Object.values(campusesObj)
-    console.log(campusesObj, 'THIS IS CAMPUSES OBJ -- CAMPUS CARD')
-    console.log(campuses, 'THIS IS CAMPUSES --- CAMPUS CARD')
+    // console.log(campusesObj, 'THIS IS CAMPUSES OBJ -- CAMPUS CARD')
+    // console.log(campuses, 'THIS IS CAMPUSES --- CAMPUS CARD')
 
     let Images
     let imgArr = []
@@ -39,13 +39,12 @@ const CampusCard = () => {
 
     return campuses.map((campus) => (
         <div key={campus.id}>
-            {console.log(campus.name, '***CAMPUS.NAME')}
-            {console.log(campus.id, '***CAMPUS.ID')}
             {
                 campuses ?
                 <div>
                     <div className='campus-child-card'>
                         <img style={{backgroundImage: `url(${imgArr[campus.id -1]})`}}/>
+                        {console.log(imgArr[campus.id -1], 'IMAGE IN DIV')}
                         <NavLink to={`/campus/${campus.id}`} id='campus-name'>{campus.name}</NavLink>
                         <br></br>
                         {campus.city}
