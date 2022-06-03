@@ -23,6 +23,8 @@ const AddCampusForm = () => {
     const [privateSchool, setPrivateSchool] = useState(true)
     const [publicChecked, setPublicChecked] = useState(false)
     const [privateChecked, setPrivateChecked] = useState(false)
+    const [images, setImages] = useState([{url: ''}])
+    const [alt, setAlt] = useState('')
     const [errors, setErrors] = useState({})
 
     const handlePublicChange = () => {
@@ -53,7 +55,9 @@ const AddCampusForm = () => {
             tuition,
             inStateTuition,
             publicSchool,
-            privateSchool
+            privateSchool,
+            images,
+            alt
         }
 
         console.log(payload, 'PAYLOAD')
@@ -148,10 +152,25 @@ const AddCampusForm = () => {
                         Private School
                     </label>
                 </div>
+                <div>
+                <input
+                type='text'
+                value={images || ''}
+                required
+                placeholder='Enter Image URL'
+                onChange={(e) => setImages(e.target.value)}
+            />
+            <input
+                type='text'
+                value={alt || ''}
+                required
+                placeholder='Description of Image'
+                onChange={(e) => setAlt(e.target.value)}
+            />
+            </div>
                 <Link to='/campus'>Cancel</Link>
                 <button type='submit'>Submit</button>
             </form>
-            <AddCampusImage />
         </div>
     )
 }

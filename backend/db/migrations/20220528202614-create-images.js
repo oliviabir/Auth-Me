@@ -20,7 +20,7 @@ module.exports = {
           isUrl: true
         }
       },
-      description: {
+      alt: {
         allowNull: false,
         type: Sequelize.STRING(50)
       },

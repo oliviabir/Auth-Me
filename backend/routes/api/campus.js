@@ -71,6 +71,8 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         inStatetuition,
         public,
         private,
+        url,
+        alt
     } = req.body
 
     const campus = await Campus.create({
@@ -83,6 +85,15 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         inStatetuition,
         public,
         private,
+        Image: {
+            url,
+            alt
+        }
+    }, {
+        include: [{
+            // association: Image
+            association: Image.campusId
+        }]
     })
 
     return res.json(campus)
