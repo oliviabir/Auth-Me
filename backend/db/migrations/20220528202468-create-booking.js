@@ -18,6 +18,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users', key: 'id'}
       },
+      campusName: {
+        allowNull: false,
+        type:Sequelize.STRING(100),
+      },
+      campusCity: {
+        allowNull: false,
+        type: Sequelize.STRING(50),
+      },
+      campusState: {
+        allowNull: false,
+        type: Sequelize.STRING(50),
+      },
       tourDate: {
         allowNull: false,
         type: Sequelize.DATEONLY

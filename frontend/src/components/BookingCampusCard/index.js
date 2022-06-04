@@ -1,24 +1,26 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCampus } from '../../store/campus'
+import { getBookings } from '../../store/booking'
 
-const BookingCampusCard = ({ campusId }) => {
+const BookingCampusCard = () => {
     const dispatch = useDispatch()
 
-    const campusObj = useSelector(state => state.campus)
-    const campus = campusObj.campus
-    console.log(campus.name, 'CAMPUS')
+    const bookingsObj = useSelector(state => state.booking)
+    const bookingsArr = Object.values(bookingsObj)
 
     useEffect(() => {
-        dispatch(getCampus(campusId))
+        dispatch(getBookings())
     }, [dispatch])
 
-    return (
-        <div>
-            <h1>{campus.name}</h1>
-            <div>{campus.city}</div>
+    return bookingsArr.map((booking) => (
+        <div className='booking-container'>
+            <div>{booking.campusName}</div>
+            <div>{booking.campusCity}</div>
+            <div>{booking.campusState}</div>
+            <div>{booking.tourDate}</div>
+            <br />
         </div>
-    )
+    ))
 }
 
 export default BookingCampusCard

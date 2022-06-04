@@ -26,10 +26,16 @@ const AddBookingForm = ({ campus }) => {
 
         const userId = sessionUser.id
         const campusId = campus.id
+        const campusName = campus.name
+        const campusCity = campus.city
+        const campusState = campus.state
 
         const payload = {
             userId,
             campusId,
+            campusName,
+            campusCity,
+            campusState,
             tourDate,
         }
 
