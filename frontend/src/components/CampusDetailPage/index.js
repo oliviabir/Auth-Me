@@ -13,11 +13,6 @@ const CampusDetail = () => {
     const campusObj =  useSelector(state => state.campus)
     const campus = campusObj.campus
 
-    console.log(campusObj[campusId], 'CAMPUSOBJ.CAMPUSID')
-    console.log(campusObj, 'THIS IS CAMPUS OBJ')
-    console.log(campusId, 'THIS IS CAMPUS ID')
-    console.log(campus, 'THIS IS CAMPUS')
-
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -27,12 +22,10 @@ const CampusDetail = () => {
 
 
     const handleDelete = async (e) => {
-      console.log('HANDLE DELETE HITTT')
       e.preventDefault()
 
       let campusDelete = await dispatch(deleteCampus(campusId))
-      console.log('DISPATCHED DELETE')
-      console.log(campusDelete, 'CAMPUS DELETE HIT')
+
       if (campusDelete) {
         return history.push('/campus')
       }
@@ -43,15 +36,19 @@ const CampusDetail = () => {
       {
         campus ?
         <div className='campus-detail-container'>
-            <h1>{campus.name}</h1>
-            <h4>{campus.city}, {campus.state}</h4>
-            <h3>Tuition: ${campus.tuition}</h3>
-            <div>
+            <div className='campus-detail-info'>
+                <h1 className='campus-name-detail'>{campus.name}</h1>
+                <h4 className='campus-location-detail'>{campus.city}, {campus.state}</h4>
+                <h3 className='campus-tuition-detail'>Tuition: ${campus.tuition}</h3>
+            </div>
+            <div className='campus-image-detail-container'>
               <CampusImageDetail campus={campus}/>
             </div>
-            <h2>Description</h2>
-            <div>{campus.description}</div>
-            <AddBookingForm campus={campus}/>
+            <h2 className='description-label-detail'>Description</h2>
+            <div className='campus-description-detail'>{campus.description}</div>
+            <div className='add-booking-div'>
+                <AddBookingForm campus={campus}/>
+            </div>
             <Link to='/bookings'>Book a Tour</Link>
             <EditCampusForm campus={campus} />
             <button onClick={handleDelete}>

@@ -4,3 +4,20 @@
     padding-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.campus-detail-info {
+    color: rgb(88, 84, 84);
+}
+
+.campus-name-detail {
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+
+.campus-location-detail {
+    margin-top: 5px;
+}
+
+.campus-tuition-detail {
+    font-size: 25px;
+}
