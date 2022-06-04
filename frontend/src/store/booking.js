@@ -3,7 +3,7 @@ import { csrfFetch } from "./csrf";
 
 const CREATE = 'booking/CREATE'
 const READ = 'booking/READ'
-const REMOVE = 'booking/REMOVE'
+const DELETE_ONE = 'booking/DELETE_ONE'
 
 const create = (newBooking) => ({
     type: CREATE,
@@ -16,7 +16,7 @@ const read = (bookings) => ({
 })
 
 const remove = (bookingToDelete) => ({
-    type: REMOVE,
+    type: DELETE_ONE,
     bookingToDelete
 })
 
@@ -94,10 +94,10 @@ const bookingReducer = (state = initialState, action) => {
                 ...state,
                 ...normalizedBookings
             }
-        case REMOVE:
-            const deleteState = {...state}
-            delete deleteState[action.bookingToDelete]
-            return deleteState
+        case DELETE_ONE:
+            const deletedState = {...state}
+            delete deletedState[action.bookingToDelete]
+            return deletedState
         default:
             return state
     }

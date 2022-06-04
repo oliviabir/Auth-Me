@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { currentUser } = require('../../utils/auth')
-const { Booking, User, Campus } = require('../../db/models');
+const { Booking, Campus } = require('../../db/models');
 
 
 
