@@ -25,17 +25,6 @@ module.exports = (sequelize, DataTypes) => {
     tuition: {
       allowNull: false,
       type: DataTypes.INTEGER,
-    },
-    inStateTuition: {
-      type: DataTypes.INTEGER,
-    },
-    publicSchool: {
-      type: DataTypes.BOOLEAN,
-      default: false
-    },
-    privateSchool: {
-      type: DataTypes.BOOLEAN,
-      default: false
     }
   }, {});
   Campus.associate = function(models) {

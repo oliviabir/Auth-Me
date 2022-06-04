@@ -33,17 +33,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      inStateTuition: {
-        type: Sequelize.INTEGER
-      },
-      publicSchool: {
-        type: Sequelize.BOOLEAN,
-        default: false
-      },
-      privateSchool: {
-        type: Sequelize.BOOLEAN,
-        default: false
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
