@@ -1,14 +1,14 @@
+.splash-container {
+    margin-top: 10%;
+    padding-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .splash-flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.splash-container {
-    margin-top: 10%;
-    padding-top: 2%;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .splash-main-text {
@@ -48,6 +48,7 @@
     grid-column-start: 2;
     grid-row-start: 2;
     min-width: 95%;
+    background-position: right bottom 70%;
 }
 
 .splash-main-img {
@@ -65,10 +66,6 @@
     margin: 20px;
     border-radius: 10px;
     background-position: center;
-}
-
-#featured-image-card {
-    background-position: right bottom 70%;
 }
 
 .campus-link {
