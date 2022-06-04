@@ -33,12 +33,18 @@ router.post('/new', bookingValidators, asyncHandler(async (req, res) => {
     const {
         userId,
         campusId,
+        campusName,
+        campusCity,
+        campusState,
         tourDate,
     } = req.body
 
     const booking = await Booking.create({
         userId,
         campusId,
+        campusName,
+        campusCity,
+        campusState,
         tourDate,
     })
 

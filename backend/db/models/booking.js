@@ -11,6 +11,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {model: 'Users', key: 'id'}
     },
+    campusName: {
+      allowNull: false,
+      type:DataTypes.STRING(100),
+    },
+    campusCity: {
+      allowNull: false,
+      type: DataTypes.STRING(50),
+    },
+    campusState: {
+      allowNull: false,
+      type: DataTypes.STRING(50),
+    },
     tourDate: {
       allowNull: false,
       type: DataTypes.DATEONLY,
