@@ -33,6 +33,25 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.add-booking-div {
-    width: 95%;
+.detail-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-btn {
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid rgb(49, 47, 47);
+    border-radius: 7px;
+}
+
+.detail-btn:hover {
+    border: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
+}
+
+#edit-detail-btn {
+    margin-left: 65%;
 }

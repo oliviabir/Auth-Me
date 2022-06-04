@@ -50,23 +50,27 @@ const CampusDetail = () => {
             </div>
             <h2 className='description-label-detail'>Description</h2>
             <div className='campus-description-detail'>{campus.description}</div>
-            <button onClick={() => setShowBookingModal(true)}>Book a Tour</button>
-            {showBookingModal && (
-                <Modal onClose={() => setShowBookingModal(false)}>
-                    <div className='add-booking-div'>
+            <div className='detail-buttons'>
+                <button onClick={() => setShowBookingModal(true)} className='detail-btn'>
+                    Book a Tour
+                </button>
+                {showBookingModal && (
+                    <Modal onClose={() => setShowBookingModal(false)}>
                         <AddBookingForm campus={campus}/>
-                    </div>
-                </Modal>
-            )}
-            <button onClick={() => setShowEditModal(true)}>Edit Campus</button>
-            {showEditModal && (
-                <Modal onClose={() => setShowEditModal(false)}>
-                  <EditCampusForm campus={campus} />
-                </Modal>
-            )}
-            <button onClick={handleDelete}>
-              Delete Campus
-            </button>
+                    </Modal>
+                )}
+                <button onClick={() => setShowEditModal(true)} className='detail-btn' id='edit-detail-btn'>
+                    Edit Campus
+                </button>
+                {showEditModal && (
+                    <Modal onClose={() => setShowEditModal(false)}>
+                        <EditCampusForm campus={campus} />
+                    </Modal>
+                )}
+                <button onClick={handleDelete} className='detail-btn' id='delete-detail-btn'>
+                  Delete Campus
+                </button>
+            </div>
         </div>
         :null
       }

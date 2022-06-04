@@ -55,7 +55,7 @@ const AddBookingForm = ({ campus }) => {
     }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='booking-form-container'>
         <h3 className='book-tour-heading'>Book a Tour</h3>
         <Calendar
             className='booking-calendar'
