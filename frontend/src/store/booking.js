@@ -92,7 +92,7 @@ const bookingReducer = (state = initialState, action) => {
             })
             return {
                 ...state,
-                normalizedBookings
+                ...normalizedBookings
             }
         case REMOVE:
             const deleteState = {...state}

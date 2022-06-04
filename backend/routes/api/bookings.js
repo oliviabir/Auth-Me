@@ -14,8 +14,9 @@ router.get('/', asyncHandler(async (req, res) => {
 
     const bookings = await Booking.findAll({
         where: {
-            userId: user.id
-        }
+            userId: user.id,
+        },
+        include: Campus
     })
 
     return res.json(bookings)
