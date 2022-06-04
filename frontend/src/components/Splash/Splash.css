@@ -1,7 +1,53 @@
+.splash-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .splash-container {
     margin-top: 10%;
     padding-top: 2%;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.splash-main-text {
+    font-size: 65px;
+    color: rgb(88, 84, 84);
+    text-align: center;
+}
+
+.splash-second-text {
+    color: rgb(88, 84, 84);
+    text-align: center;
+}
+
+.demo-btn {
+    color: white;
+    background-color: rgb(65, 220, 201);
+    font-size: 20px;
+    padding: 7px 20px 7px 20px;
+    border: none;
+    border-radius: 20px;
+}
+
+.splash-grid-container {
+    margin: 0px 75px 0px 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#explore-campus-card {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    min-width: 95%;
+}
+
+#featured-image-card {
+    margin-left: 50px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    min-width: 95%;
 }
 
 .splash-main-img {
@@ -9,6 +55,8 @@
     width: 60%;
     margin: 20px;
     border-radius: 10px;
+    grid-column-start: 1;
+    min-width: 200%;
 }
 
 .splash-image-card {
