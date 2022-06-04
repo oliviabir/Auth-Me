@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import CampusList from "./components/CampusesList";
 import CampusDetailPage from "./components/CampusDetailPage"
 import AddCampusForm from "./components/AddCampusForm";
+import Profile from "./components/Profile";
 import AddBookingForm from "./components/AddBookingForm";
 import * as sessionActions from './store/session'
 import { getBookings } from "./store/booking";
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path='/signup' exact>
             <SignupFormPage />
+          </Route>
+          <Route path='/profile' exact>
+            <Profile />
           </Route>
           <Route path='/campus' exact>
             <CampusList />

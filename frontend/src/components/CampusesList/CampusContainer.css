@@ -1,4 +1,6 @@
 .campus-container {
+    margin-top: 10%;
+    padding-top: 2%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
@@ -35,6 +37,7 @@
 .campus-child-card {
     width: 30%px;
     height: 300px;
+    margin: 20px;
     border-radius: 10px;
 }
 

@@ -7,7 +7,7 @@ import sessionReducer from './session.js'
 const rootReducer = combineReducers({
   session: sessionReducer,
   campus: campusReducer,
-  booking: bookingReducer
+  booking: bookingReducer,
 });
 
 let enhancer;

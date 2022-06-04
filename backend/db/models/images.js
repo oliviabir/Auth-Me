@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         isUrl: true
       }
     },
-    description: {
+    alt: {
       allowNull: false,
       type: DataTypes.STRING(50)
     }

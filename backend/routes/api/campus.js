@@ -70,7 +70,9 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         tuition,
         inStatetuition,
         public,
-        private
+        private,
+        url,
+        alt
     } = req.body
 
     const campus = await Campus.create({
@@ -82,10 +84,26 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         tuition,
         inStatetuition,
         public,
-        private
+        private,
     })
 
-    return res.json(campus)
+    const image = await Image.create({
+        campusId: campus.id,
+        url,
+        alt
+    })
+
+    const campusWithImage = await Campus.findByPk(campus.id, {
+        include: Image
+    })
+
+    const testcampusWithImage = await Campus.findByPk(2, {
+        include: Image
+    })
+
+    console.log('CAMPUS WITH IMAGE*********************', campusWithImage.Images)
+    console.log(' **** TEST CAMPUS WITH IMAGE*********************', testcampusWithImage.Images)
+    return res.json(campusWithImage)
 }))
 
 router.put('/:id', campusValidators, asyncHandler(async (req, res) => {

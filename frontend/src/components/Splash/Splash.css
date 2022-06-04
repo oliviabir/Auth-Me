@@ -1,0 +1,32 @@
+.splash-container {
+    margin-top: 10%;
+    padding-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.splash-main-img {
+    height: 500px;
+    width: 60%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.splash-image-card {
+    height: 300px;
+    width: 30%;
+    margin: 20px;
+    border-radius: 10px;
+    background-position: center;
+}
+
+#featured-image-card {
+    background-position: right bottom 70%;
+}
+
+.campus-link {
+    text-decoration: none;
+    color: antiquewhite;
+    text-shadow: 1px 1px 2px black;
+    /* vertical-align: text-bottom; <<<--- doesnt work */
+    font-size: 18px;
+}

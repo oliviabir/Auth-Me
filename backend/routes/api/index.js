@@ -5,12 +5,10 @@ const campusRouter = require('./campus.js')
 const bookingRouter = require('./bookings.js')
 
 router.use('/session', sessionRouter);
-
 router.use('/users', usersRouter);
-
 router.use('/campus', campusRouter);
+router.use('/bookings', bookingRouter);
 
-router.use('/bookings', bookingRouter)
 
 
 module.exports = router;
