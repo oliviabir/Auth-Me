@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import './Navigation.css'
 
@@ -32,17 +32,17 @@ const ProfileButton = ({ user }) => {
 
   return (
     <>
-      <NavLink to='/campus/new' className='nav-links'>Add a Campus</NavLink>
-      <NavLink to='/campus' className='nav-links'>Campuses</NavLink>
+      <Link to='/campus/new' className='nav-links'>Add a Campus</Link>
+      <Link to='/campus' className='nav-links'>Campuses</Link>
       <button onClick={openMenu} id='profile-icon'>
         <i className="fa-solid fa-building-columns"></i>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li className='dropdown-name'>{user.username}</li>
+          <li className='dropdown-email'>{user.email}</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button onClick={logout} className='logout-btn'>Log Out</button>
           </li>
         </ul>
       )}
