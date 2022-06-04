@@ -46,7 +46,6 @@ const CampusDetail = () => {
             <h1>{campus.name}</h1>
             <h4>{campus.city}, {campus.state}</h4>
             <h3>Tuition: ${campus.tuition}</h3>
-            {/* add in state tuition and private or public --- if statements? */}
             <div>
               <CampusImageDetail campus={campus}/>
             </div>

@@ -15,9 +15,6 @@ const EditCampusForm = ({ campus }) => {
     const [state, setState] = useState(campus.state)
     const [description, setDescription] = useState(campus.description)
     const [tuition, setTuition] = useState(campus.tuition)
-    const [inStateTuition, setInStateTuition] = useState(campus.inStateTuition || 0)
-    const [publicSchool, setPublicSchool] = useState(campus.publicSchool || true)
-    const [privateSchool, setPrivateSchool] = useState(campus.privateSchool || false)
     const [errors, setErrors] = useState({})
 
     const handleSubmit = async(e) => {
@@ -32,9 +29,6 @@ const EditCampusForm = ({ campus }) => {
             state,
             description,
             tuition,
-            inStateTuition,
-            publicSchool,
-            privateSchool
         }
 
         let editedCampus;
@@ -96,51 +90,6 @@ const EditCampusForm = ({ campus }) => {
                     onChange={(e) => setTuition(e.target.value)}
                     required
                 />
-            </label>
-            <label>In State Tuition
-                <input
-                    type='number'
-                    value={inStateTuition}
-                    onChange={(e) => setInStateTuition(e.target.value)}
-                />
-            </label>
-            <label>Public
-                <select
-                    type='boolean'
-                    // value={publicSchool}
-                    >
-                    <option
-                        value={publicSchool}
-                        onChange={(e) => setPublicSchool(e.target.value)}
-                    >
-                        true
-                    </option>
-                    <option
-                        value={publicSchool}
-                        onChange={(e) => setPublicSchool(e.target.value)}
-                    >
-                        false
-                    </option>
-                </select>
-            </label>
-            <label>Private
-                <select
-                    type='boolean'
-                    // value={privateSchool}
-                    >
-                    <option
-                        value={privateSchool}
-                        onChange={(e) => setPrivateSchool(e.target.value)}
-                    >
-                        true
-                    </option>
-                    <option
-                        value={privateSchool}
-                        onChange={(e) => setPrivateSchool(e.target.value)}
-                    >
-                        false
-                    </option>
-                </select>
             </label>
             <Link to='/campus'>Cancel</Link>
             <button type='submit'>Submit</button>

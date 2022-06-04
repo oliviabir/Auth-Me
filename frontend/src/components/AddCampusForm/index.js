@@ -17,28 +17,9 @@ const AddCampusForm = () => {
     const [state, setState] = useState('')
     const [description, setDescription] = useState('')
     const [tuition, setTuition] = useState(0)
-    const [inStateTuition, setInStateTuition] = useState(0)
-    const [publicSchool, setPublicSchool] = useState(true)
-    const [privateSchool, setPrivateSchool] = useState(true)
-    const [publicChecked, setPublicChecked] = useState(false)
-    const [privateChecked, setPrivateChecked] = useState(false)
     const [url, setUrl] = useState('')
     const [alt, setAlt] = useState('')
     const [errors, setErrors] = useState({})
-
-    const handlePublicChange = () => {
-        setPublicChecked(!publicChecked)
-        setPublicSchool(!publicSchool)
-        setPrivateChecked(false)
-        console.log(publicSchool, 'public school')
-    }
-
-    const handlePrivateChange = () => {
-        setPrivateChecked(!privateChecked)
-        setPrivateSchool(!privateSchool)
-        setPublicChecked(false)
-        console.log(privateSchool, 'private school')
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -52,9 +33,6 @@ const AddCampusForm = () => {
             state,
             description,
             tuition,
-            inStateTuition,
-            publicSchool,
-            privateSchool,
             url,
             alt
         }
@@ -122,51 +100,22 @@ const AddCampusForm = () => {
                         required
                     />
                 </label>
-                <label>In State Tuition
+                <div>
                     <input
-                        type='number'
-                        value={inStateTuition}
-                        onChange={(e) => setInStateTuition(e.target.value)}
+                        type='text'
+                        value={url}
+                        required
+                        placeholder='Enter Image URL'
+                        onChange={(e) => setUrl(e.target.value)}
                     />
-                </label>
-                <div>
-                    <label>
-                        <input
-                            type='radio'
-                            value={publicSchool}
-                            checked={publicChecked ? true : false}
-                            onChange={handlePublicChange}
-                        />
-                        Public School
-                    </label>
+                    <input
+                        type='text'
+                        value={alt}
+                        required
+                        placeholder='Description of Image'
+                        onChange={(e) => setAlt(e.target.value)}
+                    />
                 </div>
-                <div>
-                    <label>
-                        <input
-                            type='radio'
-                            value={privateSchool}
-                            checked={privateChecked ? true : false}
-                            onChange={handlePrivateChange}
-                        />
-                        Private School
-                    </label>
-                </div>
-                <div>
-                <input
-                type='text'
-                value={url}
-                required
-                placeholder='Enter Image URL'
-                onChange={(e) => setUrl(e.target.value)}
-            />
-            <input
-                type='text'
-                value={alt}
-                required
-                placeholder='Description of Image'
-                onChange={(e) => setAlt(e.target.value)}
-            />
-            </div>
                 <Link to='/campus'>Cancel</Link>
                 <button type='submit'>Submit</button>
             </form>

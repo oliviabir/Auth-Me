@@ -68,9 +68,6 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         state,
         description,
         tuition,
-        inStatetuition,
-        public,
-        private,
         url,
         alt
     } = req.body
@@ -81,10 +78,7 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         city,
         state,
         description,
-        tuition,
-        inStatetuition,
-        public,
-        private,
+        tuition
     })
 
     const image = await Image.create({
