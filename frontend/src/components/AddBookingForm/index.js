@@ -43,7 +43,7 @@ const AddBookingForm = ({ campus }) => {
 
         if (createdBooking) {
             setErrors({})
-            return history.push('/bookings')
+            return history.push('/profile')
         }
     }
 
