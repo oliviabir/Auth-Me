@@ -4,6 +4,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
 import { createBooking } from '../../store/booking'
 import Calendar from 'react-calendar'
+import './AddBookingForm.css'
 
 const AddBookingForm = ({ campus }) => {
     const dispatch = useDispatch()
@@ -55,12 +56,13 @@ const AddBookingForm = ({ campus }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <h2>{campus.name}</h2>
+        <h3 className='book-tour-heading'>Book a Tour</h3>
         <Calendar
+            className='booking-calendar'
             value={tourDate}
             onChange={changeDate}
         />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='submit-booking-btn'>Submit</button>
     </form>
   )
 }

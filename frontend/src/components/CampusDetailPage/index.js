@@ -49,7 +49,6 @@ const CampusDetail = () => {
             <div className='add-booking-div'>
                 <AddBookingForm campus={campus}/>
             </div>
-            <Link to='/bookings'>Book a Tour</Link>
             <EditCampusForm campus={campus} />
             <button onClick={handleDelete}>
               Delete Campus

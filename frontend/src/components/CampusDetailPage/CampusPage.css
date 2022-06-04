@@ -21,3 +21,18 @@
 .campus-tuition-detail {
     font-size: 25px;
 }
+
+.description-label-detail {
+    font-size: 30px;
+    color: rgb(88, 84, 84);
+}
+
+.campus-description-detail {
+    width: 95%;
+    color: rgb(88, 84, 84);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.add-booking-div {
+    width: 95%;
+}
