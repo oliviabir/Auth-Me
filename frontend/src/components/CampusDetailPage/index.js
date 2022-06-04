@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { getCampus, deleteCampus } from '../../store/campus';
+import { Modal } from '../../context/Modal';
 import AddBookingForm from '../AddBookingForm';
 import CampusImageDetail from '../CampusImageDetail'
 import EditCampusForm from '../EditCampusForm';
@@ -15,6 +16,9 @@ const CampusDetail = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
+
+    const [showEditModal, setShowEditModal] = useState(false)
+    const [showBookingModal, setShowBookingModal] = useState(false)
 
     useEffect(() => {
         dispatch(getCampus(campusId))
@@ -42,14 +46,24 @@ const CampusDetail = () => {
                 <h3 className='campus-tuition-detail'>Tuition: ${campus.tuition}</h3>
             </div>
             <div className='campus-image-detail-container'>
-              <CampusImageDetail campus={campus}/>
+                <CampusImageDetail campus={campus}/>
             </div>
             <h2 className='description-label-detail'>Description</h2>
             <div className='campus-description-detail'>{campus.description}</div>
-            <div className='add-booking-div'>
-                <AddBookingForm campus={campus}/>
-            </div>
-            <EditCampusForm campus={campus} />
+            <button onClick={() => setShowBookingModal(true)}>Book a Tour</button>
+            {showBookingModal && (
+                <Modal onClose={() => setShowBookingModal(false)}>
+                    <div className='add-booking-div'>
+                        <AddBookingForm campus={campus}/>
+                    </div>
+                </Modal>
+            )}
+            <button onClick={() => setShowEditModal(true)}>Edit Campus</button>
+            {showEditModal && (
+                <Modal onClose={() => setShowEditModal(false)}>
+                  <EditCampusForm campus={campus} />
+                </Modal>
+            )}
             <button onClick={handleDelete}>
               Delete Campus
             </button>

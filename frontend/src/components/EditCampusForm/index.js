@@ -15,7 +15,7 @@ const EditCampusForm = ({ campus }) => {
     const [state, setState] = useState(campus.state)
     const [description, setDescription] = useState(campus.description)
     const [tuition, setTuition] = useState(campus.tuition)
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState([])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -41,16 +41,16 @@ const EditCampusForm = ({ campus }) => {
         }
 
         if (editedCampus) {
-            setErrors({})
+            setErrors([])
             return history.push('/campus')
         }
     }
 
     return (
         <form onSubmit={handleSubmit} className='form'>
-            {/* <ul>
+            <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul> */}
+            </ul>
             <label>School Name
                 <input
                     type='text'

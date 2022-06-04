@@ -62,7 +62,7 @@ const AddBookingForm = ({ campus }) => {
             value={tourDate}
             onChange={changeDate}
         />
-        <button type='submit' className='submit-booking-btn'>Submit</button>
+        <button type='submit' className='submit-booking-btn'>Book tour</button>
     </form>
   )
 }
