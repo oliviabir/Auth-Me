@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 
 const CREATE = 'booking/CREATE'
 const READ = 'booking/READ'
+const READ_ONE = 'booking/READ_ONE'
 const DELETE_ONE = 'booking/DELETE_ONE'
 
 const create = (newBooking) => ({
@@ -13,6 +14,11 @@ const create = (newBooking) => ({
 const read = (bookings) => ({
     type: READ,
     bookings
+})
+
+const readOne = (booking) => ({
+    type: READ_ONE,
+    booking
 })
 
 const remove = (bookingToDelete) => ({
@@ -26,6 +32,15 @@ export const getBookings = () => async(dispatch) => {
     if (response.ok) {
         const bookings = await response.json()
         dispatch(read(bookings))
+    }
+}
+
+export const getOneBooking = (bookingId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/bookings/${bookingId}`)
+
+    if (response.ok) {
+        const booking = await response.json()
+        dispatch(readOne(booking))
     }
 }
 
@@ -64,17 +79,17 @@ export const createBooking = (bookingData) => async(dispatch) => {
     }
 }
 
-// export const deleteBooking = (bookingId) = async(dispatch) => {
-//     const response = await csrfFetch(`/api/bookings/${bookingId}`, {
-//         method: 'DELETE'
-//     })
+export const deleteBooking = (bookingId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/bookings/${bookingId}`, {
+        method: 'DELETE'
+    })
 
-//     if (response.ok) {
-//         const bookingToDelete = await response.json()
-//         dispatch(remove(bookingToDelete))
-//         return bookingToDelete
-//     }
-// }
+    if (response.ok) {
+        const deletedBooking = await response.json()
+        dispatch(remove(deletedBooking))
+        return deletedBooking
+    }
+}
 
 const initialState = {}
 
@@ -93,6 +108,11 @@ const bookingReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...normalizedBookings
+            }
+        case READ_ONE:
+            return {
+                ...state,
+                booking: action.booking
             }
         case DELETE_ONE:
             const deletedState = {...state}

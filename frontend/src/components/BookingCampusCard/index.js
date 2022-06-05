@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getBookings } from '../../store/booking'
 import DeleteBooking from './DeleteBooking'
 
-const BookingCampusCard = () => {
+const BookingCampusCard = ({ bookingsObj }) => {
     const dispatch = useDispatch()
 
-    const bookingsObj = useSelector(state => state.booking)
+    // const bookingsObj = useSelector(state => state.booking)
     const bookingsArr = Object.values(bookingsObj)
 
     useEffect(() => {
