@@ -17,8 +17,10 @@ const Navigation = ({ isLoaded }) => {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <SignUpFormModal />
+        <div className='login-signup-links'>
+          <LoginFormModal />
+          <SignUpFormModal />
+        </div>
       </>
     );
   }

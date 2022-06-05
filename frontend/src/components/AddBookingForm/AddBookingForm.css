@@ -1,0 +1,29 @@
+.booking-form-container {
+    margin: 25px;
+}
+
+.book-tour-heading {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgb(88, 84, 84);
+}
+
+.booking-calendar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+}
+
+.submit-booking-btn {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid rgb(49, 47, 47);
+    border-radius: 7px;
+}
+
+.submit-booking-btn:hover {
+    border: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
+}

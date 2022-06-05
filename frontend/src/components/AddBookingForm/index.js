@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
 import { createBooking } from '../../store/booking'
 import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
+import './AddBookingForm.css'
 
 const AddBookingForm = ({ campus }) => {
     const dispatch = useDispatch()
@@ -49,18 +51,19 @@ const AddBookingForm = ({ campus }) => {
 
         if (createdBooking) {
             setErrors({})
-            return history.push('/profile')
+            return history.push('/campus')
         }
     }
 
   return (
-    <form onSubmit={handleSubmit}>
-        <h2>{campus.name}</h2>
+    <form onSubmit={handleSubmit} className='booking-form-container'>
+        <h3 className='book-tour-heading'>Book a Tour</h3>
         <Calendar
+            className='booking-calendar'
             value={tourDate}
             onChange={changeDate}
         />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='submit-booking-btn'>Book tour</button>
     </form>
   )
 }

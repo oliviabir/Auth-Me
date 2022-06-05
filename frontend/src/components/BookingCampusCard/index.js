@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBookings } from '../../store/booking'
+import DeleteBooking from './DeleteBooking'
 
 const BookingCampusCard = () => {
     const dispatch = useDispatch()
@@ -13,11 +14,13 @@ const BookingCampusCard = () => {
     }, [dispatch])
 
     return bookingsArr.map((booking) => (
-        <div className='booking-container'>
+        <div className='booking-container' key={booking.id}>
+            {console.log(booking.id)}
             <div>{booking.campusName}</div>
             <div>{booking.campusCity}</div>
             <div>{booking.campusState}</div>
             <div>{booking.tourDate}</div>
+            <DeleteBooking bookingId={booking.id}/>
             <br />
         </div>
     ))

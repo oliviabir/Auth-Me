@@ -8,10 +8,7 @@ import CampusList from "./components/CampusesList";
 import CampusDetailPage from "./components/CampusDetailPage"
 import AddCampusForm from "./components/AddCampusForm";
 import Profile from "./components/Profile";
-import AddBookingForm from "./components/AddBookingForm";
 import * as sessionActions from './store/session'
-import { getBookings } from "./store/booking";
-import { getCampusList } from "./store/campus"
 
 function App() {
   const dispatch = useDispatch()
@@ -22,14 +19,6 @@ function App() {
     dispatch(sessionActions.restoreUser())
       .then(() => setIsLoaded(true))
   })
-
-  // const campuses = useSelector(state => state.campuses)
-  // const bookings = useSelector(state => state.bookings)
-
-  // useEffect(() => {
-  //   dispatch(getCampusList())
-  //   dispatch(getBookings())
-  // }, [dispatch])
 
   return (
     <>
@@ -54,9 +43,6 @@ function App() {
           <Route path='/campus/:campusId'>
             <CampusDetailPage />
           </Route>
-          {/* <Route path='/bookings'>
-            <AddBookingForm campuses={campuses} />
-          </Route> */}
         </Switch>
       )}
     </>

@@ -1,0 +1,41 @@
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: rgb(88, 84, 84);
+}
+
+.edit-label {
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.edit-input {
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgb(88, 84, 84);
+}
+
+.edit-form-btns {
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #41DCC9;
+    border-radius: 40px;
+    background-color: #41DCC9;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#cancel-edit {
+    text-decoration: none;
+}
