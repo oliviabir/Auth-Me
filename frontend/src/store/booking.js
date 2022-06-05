@@ -99,7 +99,7 @@ const bookingReducer = (state = initialState, action) => {
         case CREATE:
             return {
                 ...state,
-                [action.newBooking.id]: action.booking
+                [action.newBooking.id]: action.newBooking
             }
         case READ:
             const normalizedBookings = {}

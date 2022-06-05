@@ -132,7 +132,6 @@ const campusReducer = (state = initialState, action) => {
                 ...normalizedCampuses
             }
         case LOAD_ONE:
-
             return {
                 ...state,
                 campus: action.campus

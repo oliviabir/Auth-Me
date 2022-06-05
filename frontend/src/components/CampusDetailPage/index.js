@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { getCampus, deleteCampus } from '../../store/campus';
+import { getCampusList, deleteCampus } from '../../store/campus';
 import { Modal } from '../../context/Modal';
 import AddBookingForm from '../AddBookingForm';
 import CampusImageDetail from '../CampusImageDetail'
@@ -12,7 +12,10 @@ import './CampusPage.css'
 const CampusDetail = () => {
     const { campusId } = useParams()
     const campusObj =  useSelector(state => state.campus)
-    const campus = campusObj.campus
+    const campuses = Object.values(campusObj)
+    const campus = campuses.find(campus => campus.id == campusId)
+
+    console.log(campus, 'CAMPUS')
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -21,8 +24,8 @@ const CampusDetail = () => {
     const [showBookingModal, setShowBookingModal] = useState(false)
 
     useEffect(() => {
-        dispatch(getCampus(campusId))
-    }, [dispatch])
+      dispatch(getCampusList())
+  }, [dispatch])
 
 
     const handleDelete = async (e) => {

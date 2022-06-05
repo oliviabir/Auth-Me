@@ -7,6 +7,7 @@ const BookingCampusCard = ({ bookingsObj }) => {
     const dispatch = useDispatch()
 
     // const bookingsObj = useSelector(state => state.booking)
+    console.log(bookingsObj)
     const bookingsArr = Object.values(bookingsObj)
 
     useEffect(() => {
