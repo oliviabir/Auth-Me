@@ -1,9 +1,9 @@
 .detail-image-container {
     display: grid;
-    gap: 5px;
+    gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
-    margin: 50px;
+    /* margin: 50px; */
 }
 
 .image-one-container {
@@ -15,18 +15,20 @@
 
 #first-image {
     height: 500px;
-    width: 700px;
+    width: 800px;
     border-radius: 10px;
 }
 
 #second-image {
-    height: 240px;
+    margin-bottom: 5px;
+    height: 235px;
     width: 350px;
     border-radius: 10px;
 }
 
 #third-image {
-    height: 240px;
+    margin-top: 5px;
+    height: 235px;
     width: 350px;
     border-radius: 10px;
 }

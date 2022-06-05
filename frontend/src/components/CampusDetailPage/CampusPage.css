@@ -36,6 +36,7 @@
 .detail-buttons {
     display: flex;
     justify-content: space-between;
+    margin-right: 4%;
 }
 
 .detail-btn {
