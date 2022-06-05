@@ -80,6 +80,7 @@ export const createBooking = (bookingData) => async(dispatch) => {
 }
 
 export const deleteBooking = (bookingId) => async(dispatch) => {
+    console.log( '***HIT DELETE THUNK***')
     const response = await csrfFetch(`/api/bookings/${bookingId}`, {
         method: 'DELETE'
     })

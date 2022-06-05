@@ -59,7 +59,8 @@ router.post('/new', bookingValidators, asyncHandler(async (req, res) => {
     return res.json(booking)
 }))
 
-router.delete(':bookingId', asyncHandler(async (req, res) => {
+router.delete('/:bookingId', asyncHandler(async (req, res) => {
+    console.log('***HIT DELETE ROUTE***')
     const bookingId = req.params.bookingId
 
     const booking = await Booking.findByPk(bookingId)
