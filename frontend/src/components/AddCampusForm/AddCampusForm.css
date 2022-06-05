@@ -1,3 +1,99 @@
-.form {
+.add-campus-form {
     margin: 10%;
+}
+
+.add-campus-form * {
+    line-height: 1.5;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(88, 84, 84);
+}
+
+.add-form-container {
+    height: 500px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+}
+
+.add-campus-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgb(161, 157, 157);
+    justify-self: center;
+}
+
+.add-campus-input {
+    margin-left: 5%;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(236, 233, 233);
+}
+
+#add-name-label {
+    margin-left: 15%;
+}
+
+#add-city-label {
+    margin-right: 18%;
+}
+
+#add-state-label {
+    margin-left: 3%;
+}
+
+#add-description-label {
+    margin-right: 6%;
+}
+
+#add-tuition-label {
+    margin-left: 6%;
+}
+
+#add-image-label {
+    margin-right: 2%;
+}
+
+#add-imgdesc-label {
+    margin-left: 19%;
+}
+
+.add-form-buttons {
+    margin-top: 10px;
+    margin-left: 85%;
+}
+
+.add-cancel-link {
+    margin-left: 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    color: rgb(88, 84, 84);
+}
+
+.add-cancel-link:hover {
+    color: rgb(65, 220, 201);
+    border-bottom: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
+}
+
+.add-submit-btn {
+    padding: 2px 5px 2px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+    color: rgb(88, 84, 84);
+    border: 1px solid rgb(49, 47, 47);
+    border-radius: 7px;
+}
+
+.add-submit-btn:hover {
+    border: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
 }
