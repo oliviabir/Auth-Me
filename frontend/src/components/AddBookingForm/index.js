@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
 import { createBooking } from '../../store/booking'
 import Calendar from 'react-calendar'
@@ -51,7 +51,7 @@ const AddBookingForm = ({ campus }) => {
 
         if (createdBooking) {
             setErrors({})
-            return history.push('/profile')
+            return history.push('/campus')
         }
     }
 

@@ -26,7 +26,7 @@ const CampusCard = () => {
                         <div className='card-text'>
                             <NavLink to={`/campus/${campus.id}`} id='campus-name' style={{color: 'antiquewhite'}}>{campus.name}</NavLink>
                             <br></br>
-                            {campus.city}, {campus.state}
+                            <div className='campus-card-location'>{campus.city}, {campus.state}</div>
                         </div>
                     </div>
                     <br></br>
