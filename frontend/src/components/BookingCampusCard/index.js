@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBookings } from '../../store/booking'
 import DeleteBooking from './DeleteBooking'
+import './BookingCampusCard.css'
 
 const BookingCampusCard = ({ bookingsObj }) => {
     const dispatch = useDispatch()
@@ -16,10 +17,8 @@ const BookingCampusCard = ({ bookingsObj }) => {
 
     return bookingsArr.map((booking) => (
         <div className='booking-container' key={booking.id}>
-            {console.log(booking.id)}
-            <div>{booking.campusName}</div>
-            <div>{booking.campusCity}</div>
-            <div>{booking.campusState}</div>
+            <div className=''>{booking.campusName}</div>
+            <div>{booking.campusCity}, {booking.campusState}</div>
             <div>{booking.tourDate}</div>
             <DeleteBooking bookingId={booking.id}/>
             <br />

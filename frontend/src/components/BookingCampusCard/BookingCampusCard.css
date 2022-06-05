@@ -1,0 +1,26 @@
+.booking-container {
+    border: 1px solid rgb(88, 84, 84);
+    border-radius: 10px;
+    margin: 5%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 84, 84);
+}
+
+.booking-name {
+    font-size: 32px;
+}
+
+.cancel-booking-btn {
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid rgb(49, 47, 47);
+    border-radius: 7px;
+}
+
+.cancel-booking-btn:hover {
+    border: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
+}
