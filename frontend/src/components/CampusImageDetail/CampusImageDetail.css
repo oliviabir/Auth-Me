@@ -3,7 +3,6 @@
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
-    /* margin: 50px; */
 }
 
 .image-one-container {

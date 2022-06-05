@@ -2,7 +2,6 @@ import { ValidationError } from "../utils/validationError"
 import { csrfFetch } from "./csrf"
 
 const LOAD = 'campus/LOAD'
-const LOAD_ONE = 'campus/LOAD_ONE'
 const ADD_ONE = 'campus/ADD_ONE'
 const EDIT_ONE = 'campus/EDIT_ONE'
 const DELETE_ONE = 'campus/DELETE_ONE'
@@ -10,11 +9,6 @@ const DELETE_ONE = 'campus/DELETE_ONE'
 const load = (campuses) => ({
     type: LOAD,
     campuses,
-})
-
-const loadOne = (campus) => ({
-    type: LOAD_ONE,
-    campus,
 })
 
 const addOne = (newCampus) => ({
@@ -34,20 +28,10 @@ const deleteOne = (campusToDelete) => ({
 
 export const getCampusList = () => async(dispatch) => {
     const response = await csrfFetch('/api/campus')
-    console.log(response, 'GET CAMPUS LIST --- RESPONSE FROM THUNKKKKK')
+
     if (response.ok) {
         const campuses = await response.json()
         dispatch(load(campuses))
-    }
-}
-
-export const getCampus = (campusId) => async(dispatch) => {
-    const response = await csrfFetch(`/api/campus/${campusId}`)
-    console.log(response, 'GET CAMPUS --- RESPONSE FROM THUNKKKKK')
-    if (response.ok) {
-        const campus = await response.json()
-        console.log(campus, '--- campus from thunk')
-        dispatch(loadOne(campus))
     }
 }
 
@@ -60,7 +44,7 @@ export const addCampus = (campusData) => async(dispatch) => {
             },
             body: JSON.stringify(campusData)
         })
-        console.log(response, 'ADD CAMPUS --- RESPONSE FROM THUNKKKKK')
+
         if (!response.ok) {
             let error;
             if (response.status === 422) {
@@ -96,7 +80,7 @@ export const editCampus = (data, id) => async(dispatch) => {
         },
         body: JSON.stringify(data)
     })
-    console.log(response, 'ADD CAMPUS --- RESPONSE FROM THUNKKKKK')
+
     if (response.ok) {
         const editedCampus = await response.json()
         dispatch(editOne(editedCampus))
@@ -105,12 +89,10 @@ export const editCampus = (data, id) => async(dispatch) => {
 }
 
 export const deleteCampus = (campusId) => async(dispatch) => {
-    console.log('DELETE THUNKKK HIT')
-    console.log(campusId, 'CAMPUS ID -- DELETE THUNK')
     const response = await csrfFetch(`/api/campus/${campusId}`, {
         method: 'DELETE'
     })
-    console.log(response, 'THIS IS THE DELETE RESPONSE')
+
     if (response.ok) {
         const deletedCampus = await response.json()
         dispatch(deleteOne(deletedCampus))
@@ -130,11 +112,6 @@ const campusReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...normalizedCampuses
-            }
-        case LOAD_ONE:
-            return {
-                ...state,
-                campus: action.campus
             }
         case ADD_ONE:
             return {

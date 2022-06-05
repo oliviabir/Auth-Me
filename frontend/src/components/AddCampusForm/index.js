@@ -37,9 +37,7 @@ const AddCampusForm = () => {
             alt
         }
 
-        console.log(payload, 'PAYLOAD')
         let createdCampus
-        // let createdCampus = await dispatch(addCampus(payload))
         try {
             createdCampus = await dispatch(addCampus(payload))
             console.log(createdCampus, 'CREATED CAMPUSSS')

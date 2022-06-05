@@ -9,7 +9,7 @@ const { Campus, Image } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async(req, res) => {
-    console.log('CAMPUS GET ALL ROUTE HIT')
+
     const campuses = await Campus.findAll({
         include: Image
     })
@@ -18,7 +18,6 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
-    console.log('CAMPUS GET ONE ROUTE HIT')
     const campusId = req.params.campusId
 
     const campus = await Campus.findByPk(campusId, {
@@ -59,8 +58,7 @@ const campusValidators = [
 ]
 
 router.post('/new', campusValidators, asyncHandler(async (req, res) => {
-    console.log('CAMPUS POST ROUTE HIT')
-    console.log(req.body, 'BACKEND -- REQ BODY')
+
     const {
         userId,
         name,
@@ -95,13 +93,10 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         include: Image
     })
 
-    console.log('CAMPUS WITH IMAGE*********************', campusWithImage.Images)
-    console.log(' **** TEST CAMPUS WITH IMAGE*********************', testcampusWithImage.Images)
     return res.json(campusWithImage)
 }))
 
 router.put('/:id', campusValidators, asyncHandler(async (req, res) => {
-    console.log('CAMPUS PUT ROUTE HIT')
     const id = req.params.id
 
     await Campus.update(req.body, {
@@ -113,12 +108,9 @@ router.put('/:id', campusValidators, asyncHandler(async (req, res) => {
 }))
 
 router.delete('/:campusId', asyncHandler(async (req, res) => {
-    console.log('CAMPUS DELETE ROUTE HIT')
     const campusId = req.params.campusId
-    // console.log('DELETE ROUTER HIT')
 
     const campus = await Campus.findByPk(campusId)
-    console.log(campus, '************BACKEND DELETE CAMPUS -- CAMPUS*******')
 
     if (campus) {
         await campus.destroy()

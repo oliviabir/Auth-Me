@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { getCampusList } from '../../store/campus';
 import './CampusContainer.css'
 
@@ -9,9 +9,6 @@ const CampusCard = () => {
     const dispatch = useDispatch()
     const campusesObj = useSelector(state => state.campus)
     const campuses = Object.values(campusesObj)
-
-    console.log('CAMPUSES OBJ', campusesObj)
-    console.log('CAMPUSES', campuses)
 
     useEffect(() => {
         dispatch(getCampusList())

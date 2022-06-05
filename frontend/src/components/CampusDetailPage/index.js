@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getCampusList, deleteCampus } from '../../store/campus';
 import { Modal } from '../../context/Modal';
 import AddBookingForm from '../AddBookingForm';
@@ -14,8 +14,6 @@ const CampusDetail = () => {
     const campusObj =  useSelector(state => state.campus)
     const campuses = Object.values(campusObj)
     const campus = campuses.find(campus => campus.id == campusId)
-
-    console.log(campus, 'CAMPUS')
 
     const dispatch = useDispatch()
     const history = useHistory()

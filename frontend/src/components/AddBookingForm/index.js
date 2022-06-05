@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
 import { createBooking } from '../../store/booking'
 import Calendar from 'react-calendar'
@@ -10,7 +10,6 @@ import './AddBookingForm.css'
 const AddBookingForm = ({ campus }) => {
     const dispatch = useDispatch()
     const history = useHistory()
-    console.log('add booking form hit')
 
     const sessionUser = useSelector(state => state.session.user)
 
@@ -20,8 +19,6 @@ const AddBookingForm = ({ campus }) => {
     const changeDate = (e) => {
         setTourDate(e)
     }
-
-    console.log(tourDate, '<<<<TOUR DATE')
 
     const handleSubmit = async (e) => {
         e.preventDefault()

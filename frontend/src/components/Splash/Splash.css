@@ -72,6 +72,5 @@
     text-decoration: none;
     color: antiquewhite;
     text-shadow: 1px 1px 2px black;
-    /* vertical-align: text-bottom; <<<--- doesnt work */
     font-size: 18px;
 }

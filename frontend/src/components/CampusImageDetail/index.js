@@ -1,7 +1,5 @@
 import React from 'react'
 import './CampusImageDetail.css'
-import { useSelector } from 'react-redux'
-
 
 const CampusImageDetail = ({campus}) => {
   const imagesArr = campus.Images
