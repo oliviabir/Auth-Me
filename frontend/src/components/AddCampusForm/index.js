@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { addCampus } from "../../store/campus";
@@ -11,7 +11,6 @@ const AddCampusForm = () => {
 
     const sessionUser = useSelector(state => state.session.user)
 
-
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
@@ -19,7 +18,23 @@ const AddCampusForm = () => {
     const [tuition, setTuition] = useState(0)
     const [url, setUrl] = useState('')
     const [alt, setAlt] = useState('')
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+        const errors = []
+
+        if (name.length > 100) {
+            errors.push('Name must be less than 100 characters')
+        }
+        if (city.length > 50) {
+            errors.push('City must be less than 50 characters')
+        }
+        if (state.length > 50) {
+            errors.push('State must be less than 50 characters')
+        }
+
+        setErrors(errors)
+    }, [name, city, state])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -40,14 +55,13 @@ const AddCampusForm = () => {
         let createdCampus
         try {
             createdCampus = await dispatch(addCampus(payload))
-            console.log(createdCampus, 'CREATED CAMPUSSS')
         } catch (error) {
             if (error instanceof ValidationError) setErrors(errors.error)
-            else setErrors({ overall: error.toString().slice(7) })
+            else setErrors(error.toString().slice(7))
         }
 
         if (createdCampus) {
-            setErrors({})
+            setErrors([])
             return history.push('/campus')
         }
     }
@@ -55,9 +69,9 @@ const AddCampusForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} className='add-campus-form'>
-                {/* <ul>
+                <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul> */}
+                </ul>
                 <h1>Add a Campus</h1>
                 <div className='add-form-container' style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit)'}}>
                     <label className='add-campus-label' id='add-name-label'>School Name

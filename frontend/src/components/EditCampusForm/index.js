@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { ValidationError } from '../../utils/validationError'
@@ -17,6 +17,22 @@ const EditCampusForm = ({ campus }) => {
     const [description, setDescription] = useState(campus.description)
     const [tuition, setTuition] = useState(campus.tuition)
     const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+        const errors = []
+
+        if (name.length > 100) {
+            errors.push('Name must be less than 100 characters')
+        }
+        if (city.length > 50) {
+            errors.push('City must be less than 50 characters')
+        }
+        if (state.length > 50) {
+            errors.push('State must be less than 50 characters')
+        }
+
+        setErrors(errors)
+    }, [name, city, state])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -38,7 +54,7 @@ const EditCampusForm = ({ campus }) => {
             editedCampus = await dispatch(editCampus(payload, campus.id))
         } catch (error) {
             if (error instanceof ValidationError) setErrors(errors.error)
-            else setErrors({ overall: error.toString().slice(7) })
+            else setErrors(error.toString().slice(7))
         }
 
         if (editedCampus) {
