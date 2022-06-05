@@ -39,6 +39,14 @@ const Splash = () => {
                 <Link to='/campus/11' className='campus-link'>Featured Campus</Link>
             </div>
         </div>
+        <footer>
+            <Link to={{ pathname: 'https://github.com/oliviabir'}} className='about-links' target='_blank'>
+                <i className='fa-brands fa-github'></i>
+            </Link>
+            <Link to={{ pathname: 'https://www.linkedin.com/in/olivia-bir-74b16b7b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhIpATu1WRI2%2FsBi7q7h8Hw%3D%3D'}} className='about-links' target='_blank'>
+                <i className='fa-brands fa-linkedin'></i>
+            </Link>
+        </footer>
     </div>
   )
 }

@@ -74,3 +74,14 @@
     text-shadow: 1px 1px 2px black;
     font-size: 18px;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.about-links {
+    text-decoration: none;
+    color: rgb(88, 84, 84);
+    font-size: 30px;
+}
