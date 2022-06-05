@@ -39,7 +39,7 @@ const ProfileButton = ({ user }) => {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li className='dropdown-name'>{user.username}</li>
+          <Link to='/profile' className='nav-profile-link'>{user.username}</Link>
           <li className='dropdown-email'>{user.email}</li>
           <li>
             <button onClick={logout} className='logout-btn'>Log Out</button>

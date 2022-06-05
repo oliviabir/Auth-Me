@@ -68,6 +68,19 @@ li {
     padding: 5px;
 }
 
+.nav-profile-link {
+    margin-right: 5%;
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(88, 84, 84);
+}
+
+.nav-profile-link:hover {
+    color: rgb(65, 220, 201);
+    border-bottom: 1px solid rgb(65, 220, 201);
+    transition: all 0.25s ease-in 0s;
+}
+
 .dropdown-email {
     padding: 5px;
 }

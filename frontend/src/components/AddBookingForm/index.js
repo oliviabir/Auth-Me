@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { ValidationError } from '../../utils/validationError'
 import { createBooking } from '../../store/booking'
 import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
 import './AddBookingForm.css'
 
 const AddBookingForm = ({ campus }) => {
