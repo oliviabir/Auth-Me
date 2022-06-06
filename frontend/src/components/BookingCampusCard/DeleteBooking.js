@@ -18,7 +18,7 @@ const DeleteBooking = ({ bookingId }) => {
     }
 
   return (
-    <button className='cancel-booking-btn' onClick={handleDelete}>Cancel Booking</button>
+    <button className='cancel-booking-btn' onClick={handleDelete}>Cancel Tour</button>
   )
 }
 
