@@ -1,5 +1,5 @@
 # HipCampus
-HipCampus is a HipCamp clone built for viewing college campuses and scheduling tours. 
+HipCampus is a HipCamp clone built for viewing college campuses and scheduling tours.
 
 ## Technologies Used
 * PostgreSql
