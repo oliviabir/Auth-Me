@@ -9,6 +9,8 @@ const { Booking, Campus } = require('../../db/models');
 
 const router = express.Router();
 
+// GET all Bookings
+
 router.get('/', asyncHandler(async (req, res) => {
     const user = currentUser(req)
 
@@ -21,6 +23,8 @@ router.get('/', asyncHandler(async (req, res) => {
 
     return res.json(bookings)
 }))
+
+// GET Booking by Id
 
 router.get('/:bookingId(\\d+)', asyncHandler(async (req,res) => {
     const bookingId = req.params.bookingId
@@ -36,6 +40,8 @@ const bookingValidators = [
         .withMessage('Please enter a tour date'),
     handleValidationErrors
 ]
+
+// CREATE a Booking
 
 router.post('/new', bookingValidators, asyncHandler(async (req, res) => {
     const {
@@ -58,6 +64,8 @@ router.post('/new', bookingValidators, asyncHandler(async (req, res) => {
 
     return res.json(booking)
 }))
+
+// DELETE a Booking
 
 router.delete('/:bookingId', asyncHandler(async (req, res) => {
     const bookingId = req.params.bookingId

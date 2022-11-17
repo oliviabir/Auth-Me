@@ -8,6 +8,8 @@ const { Campus, Image } = require('../../db/models');
 
 const router = express.Router();
 
+// GET list of Campuses
+
 router.get('/', asyncHandler(async(req, res) => {
 
     const campuses = await Campus.findAll({
@@ -16,6 +18,8 @@ router.get('/', asyncHandler(async(req, res) => {
 
     return res.json(campuses)
 }))
+
+// GET Campus by id
 
 router.get('/:campusId(\\d+)', asyncHandler(async(req, res) => {
     const campusId = req.params.campusId
@@ -57,6 +61,8 @@ const campusValidators = [
     handleValidationErrors
 ]
 
+// Add a Campus
+
 router.post('/new', campusValidators, asyncHandler(async (req, res) => {
 
     const {
@@ -89,12 +95,10 @@ router.post('/new', campusValidators, asyncHandler(async (req, res) => {
         include: Image
     })
 
-    const testcampusWithImage = await Campus.findByPk(2, {
-        include: Image
-    })
-
     return res.json(campusWithImage)
 }))
+
+// EDIT a Campus
 
 router.put('/:id', campusValidators, asyncHandler(async (req, res) => {
     const id = req.params.id
@@ -106,6 +110,8 @@ router.put('/:id', campusValidators, asyncHandler(async (req, res) => {
     const campus = await Campus.findByPk(id)
     return res.json(campus)
 }))
+
+// DELETE a Campus
 
 router.delete('/:campusId', asyncHandler(async (req, res) => {
     const campusId = req.params.campusId
